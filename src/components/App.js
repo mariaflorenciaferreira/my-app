@@ -1,5 +1,7 @@
+import NavBar from "./NavBar"
+
 function App(){
-    return "hola mundo"
+    return <NavBar/>
 }
 
 export default App
