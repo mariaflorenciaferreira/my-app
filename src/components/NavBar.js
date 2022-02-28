@@ -1,10 +1,13 @@
 import {Container,Nav,Navbar,NavDropdown} from "react-bootstrap"
-
+import LogoIcon from "./LogoIcon"
+import CartWidget from "./CartWidget"
 
 function NavBar() {
     return  <Navbar bg="light" expand="lg">
         <Container>
-        <Navbar.Brand href="#home"><h1>EL VIVERO</h1></Navbar.Brand>
+        
+        <LogoIcon/>
+        <Navbar.Brand href="#home"><h1>VIVERO</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -18,6 +21,7 @@ function NavBar() {
                 <NavDropdown.Item href="#action/3.3">Sustratos</NavDropdown.Item>
                 
             </NavDropdown>
+            <CartWidget/>
             </Nav>
         </Navbar.Collapse>
         </Container>
