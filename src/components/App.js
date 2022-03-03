@@ -4,7 +4,7 @@ import ItemListContainer from "./ItemListContainer"
 function App(){
     return (
         <>
-            <Header/>
+            <Header className="header"/>
             <ItemListContainer nombre="María Florencia" apellido="Ferreira"/>
         </>
     )

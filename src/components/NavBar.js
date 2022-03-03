@@ -3,8 +3,8 @@ import LogoIcon from "./LogoIcon"
 import CartWidget from "./CartWidget"
 
 function NavBar() {
-    return  <Navbar bg="light" expand="lg">
-        <Container>
+    return  <Navbar bg="light" expand="lg" >
+        <Container >
         
         <LogoIcon/>
         <Navbar.Brand href="#home"><h1>VIVERO</h1></Navbar.Brand>
