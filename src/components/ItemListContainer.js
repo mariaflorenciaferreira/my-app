@@ -1,16 +1,20 @@
 import ItemCount from "./ItemCount"
 import ItemList from "./ItemList";
-import {useState,useEffect} from "react"
+
 
 
 
 function ItemListContainer(props){
 
         return( 
-        <main className="ItemListContainer">
-            <h2 >Bienvenido {props.nombre} {props.apellido}!  </h2>
+        <main >
+            
+            
+            <div className="ItemListContainer">
+            <h2 className="greetings">Bienvenido {props.nombre} {props.apellido}!  </h2>
+                <ItemList />
+            </div>
             <ItemCount />
-            <ItemList />
 
         </main>
     );

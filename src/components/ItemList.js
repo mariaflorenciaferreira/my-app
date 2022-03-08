@@ -4,108 +4,58 @@ import Item from "./Item"
 
 
 
-// function ItemList(){
-
-//     let plantList=[
-//         {
-//             id:1,
-//             nombre: "MONSTERA - Costilla de Adán",
-//             precio:100,
-//             src:"public/img/costilla_adan.jpg"
-//         },
-//         {
-//             id:2,
-//             nombre:"Gomero",
-//             precio:200
-    
-//         },
-//         {
-//             id:3,
-//             nombre:"Sansevieria",
-//             precio:150
-    
-//         },
-//     ]
-    
-
-        
-//     let [loading,setLoading]=useState(true)
-//     let [products,setProducts]=useState([])
-    
-
-//         useEffect(()=>{
-//             setTimeout(()=>{
-//                 setProducts(plantList)
-//                 setLoading(false)
-//             },2000)
-//         })
-
-//     return(
-        
-//         <div>
-//             <p>{loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}</p>
-//             <button className="productListBtn">˅</button>
-//             <ul>
-//                 {products.map((products,nombre,src)=>{
-//                     return (
-
-//                         <li>
-                                                        
-//                             <div className="product">
-
-//                             <div className="imgContainer">
-//                                 <img
-//                                 src={products.src}
-//                                 alt="foto producto"
-//                                 className="productImg"
-//                                 />
-//                             </div>
-
-//                             <h5 class="productName"> {products.nombre}</h5>
-//                             <p class="productPrice">${products.precio}</p>
-
-//                             </div>
-
-
-//                         </li>
-
-//                     )
-
-//                 })
-                
-//                 }
-                
-//             </ul>
-//         </div>
-//     )
-
-    
-
-
-
-// }
-
-
-
-
 function ItemList(){
 
+    const plantList=[
+        {
+            id:1,
+            name: "MONSTERA - Costilla de Adán",
+            price:100,
+            src:"/img/costilla_adan.jpg"
+        },
+        {
+            id:2,
+            name:"Gomero",
+            price:200,
+            src:"/img/gomero.jpg"
+    
+        },
+        {
+            id:3,
+            name:"Sansevieria",
+            price:150,
+            src:"/img/sansevieria.jpg"
+    
+        },
+    ]
+    
+
+        
+    const [loading,setLoading]=useState(true)
+    const [products,setProducts]=useState([])
+    
+
+        useEffect(()=>{
+            setTimeout(()=>{
+                setProducts(plantList)
+                setLoading(false)
+            },2000)
+        })
 
     return(
         
-        <div>
-            <p>{loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}</p>
-            <button className="productListBtn">˅</button>
-            <ul>
-                <Item/>
-                
-            </ul>
-        </div>
+        <div className="shopSection">
+            <p className="shopTitle">{loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}</p>
+           
+            <div >
+                <ul className="productsSection">
+                    {products.map((products)=>{
+                        return <Item name={products.name} price={products.price}  img={products.src} />
+                    })}
+                </ul>  
+            </div>
+        </div>           
     )
-
-    
-
-
 
 }
 

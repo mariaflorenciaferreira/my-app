@@ -9,20 +9,26 @@ $cuaternary-color:#D8DED5;
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+    
+}
+
+html{
+    font-size: 10px;
+   
     
 }
 
 #root{
-    height: 100vh;
     background-color: $primary-color;
+    
     
 }
 
 main{
     display: flex;
-    flex-direction: column;
     flex-grow: 1;
-    align-items: center;
+    
 }
 
 
@@ -34,42 +40,66 @@ h2{
     color: $secondary-color;
 }
 
+.greetings{
+    font-size: 4rem;
+    color:$ternary-color;
+    letter-spacing: 0.4rem;
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    height: 6rem;
+    
+    
+}
+
 .ItemListContainer{
     margin: 25px;
     
 
 }
 
+li{
+    list-style-type: none;
+}
+
+
 .counterContainer{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 35px;
-    width: 50vw;
+    float: right;
+    // agregar animación scroll?
+    margin-top: 60px;
+    margin-right: 3rem;
+    width: 30rem;
+    height: fit-content;
     align-items: center;
     background-color: $cuaternary-color;
     padding: 30px;
-    border: 12px solid $ternary-color;
-    border-radius: 10px;
+    border: 1.3rem solid $ternary-color;
+    border-radius: 3rem;
     
     
+}
+
+.cartText{
+    font-size:1.8rem ;
+    text-align: center;
 }
 
 
 .cartItemsBtn{
-   width: 50px;
-   margin: 8px;
+   width: 65px;
    font-size: 20px;
    font-weight: bold;
-   margin: 10px;
    background-color:$ternary-color;
    color: $secondary-color;
    border: none;
    border-radius: 6px;
+   margin:1.5rem 0rem 1.5rem 2.8rem;
   
 }
 
 .counterBtn{
+    font-size: 1.5rem;
+    padding: 0.3rem;
     width: 200px;
     margin: 5px;
     border: none;
@@ -79,3 +109,46 @@ h2{
 
 }
 
+.cartText{
+    font-size:1.8rem;
+    margin-top: 1rem;
+    
+}
+
+.shopTitle{
+    font-size: 3rem;
+    color:$ternary-color;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+
+
+.productsSection{
+    align-items: center;
+    display: flex;
+    
+    
+}
+
+
+
+
+.imgContainer{
+   height: 50%;
+    display: inline-block;
+    background-size: cover;
+    margin: 1rem;
+}
+
+.productName{
+    text-align: center;
+    font-size: 2rem;
+    height: 3rem;
+}
+
+.productPrice{
+    text-align: center;
+    font-size: 1.5rem;
+    }

@@ -31,8 +31,8 @@ const ItemCount = (props)=>{
             <button className="cartItemsBtn" onClick={substractItem}>-</button>
         </div>
         
-        <button className="counterBtn" onClick={resetCounter}>Vaciar carrito</button>
-        <button className="counterBtn" onClick={onAdd} >Completar mi compra </button>
+        <button className="counterBtn" onClick={resetCounter}>VACIAR CARRITO</button>
+        <button className="counterBtn" onClick={onAdd} >COMPLETAR MI COMPRA </button>
 
         <p className="cartText">Productos en stock: {props.stock}</p>
         
