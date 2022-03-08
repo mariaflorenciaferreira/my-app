@@ -25,26 +25,22 @@ const ItemCount = (props)=>{
 
     return <div className="counterContainer">
 
-        <p className="cartText">Cantidad de plantas en tu carrito: {counter}</p>
-        <div >
+         <div className="cartBtnBlock" >
             <button className="cartItemsBtn" onClick={addItem}>+</button>
+            <p className="counterText"> {counter}</p>
             <button className="cartItemsBtn" onClick={substractItem}>-</button>
         </div>
         
         <button className="counterBtn" onClick={resetCounter}>VACIAR CARRITO</button>
         <button className="counterBtn" onClick={onAdd} >COMPLETAR MI COMPRA </button>
 
-        <p className="cartText">Productos en stock: {props.stock}</p>
+        <p className="stockText">Productos en stock: {props.stock}</p>
         
 
     </div>
 
 }
 
-ItemCount.defaultProps={
-    initialShoppingCart:1, 
-    stock:5
- 
-}
+
 
 export default ItemCount

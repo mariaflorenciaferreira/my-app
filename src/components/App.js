@@ -5,7 +5,7 @@ function App(){
     return (
         <>
             <Header className="header"/>
-            <ItemListContainer/>
+            <ItemListContainer  nombre="Florencia" apellido="Ferreira"/>
         </>
     )
 }

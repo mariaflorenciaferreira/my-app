@@ -1,7 +1,7 @@
-$primary-color:#758C87;
-$secondary-color:#474D46;
-$ternary-color:#FDFDFD;
-$cuaternary-color:#D8DED5;
+$primary-color:#FDFDFD;
+$secondary-color:#D8DED5;
+$ternary-color:#474D46;
+$cuaternary-color:#758C87;
 
 
 
@@ -15,25 +15,21 @@ $cuaternary-color:#D8DED5;
 
 html{
     font-size: 10px;
-   
-    
+
 }
 
 #root{
     background-color: $primary-color;
-    
-    
+
 }
 
 main{
-    display: flex;
-    flex-grow: 1;
-    
+    display: flex; 
 }
 
 
 h2{
-   color:$ternary-color;
+    color:$ternary-color;
 }
 
 .cartText{
@@ -52,11 +48,7 @@ h2{
     
 }
 
-.ItemListContainer{
-    margin: 25px;
-    
 
-}
 
 li{
     list-style-type: none;
@@ -64,37 +56,35 @@ li{
 
 
 .counterContainer{
-    float: right;
-    // agregar animación scroll?
-    margin-top: 60px;
-    margin-right: 3rem;
-    width: 30rem;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: $cuaternary-color;
-    padding: 30px;
-    border: 1.3rem solid $ternary-color;
-    border-radius: 3rem;
-    
-    
+     
 }
 
-.cartText{
-    font-size:1.8rem ;
+.counterText{
+    font-size:1.5rem ;
     text-align: center;
 }
 
 
 .cartItemsBtn{
-   width: 65px;
-   font-size: 20px;
+   width: 45px;
+   font-size: 18px;
    font-weight: bold;
-   background-color:$ternary-color;
-   color: $secondary-color;
+   background-color: $ternary-color ;
+   color: $primary-color ;
    border: none;
-   border-radius: 6px;
-   margin:1.5rem 0rem 1.5rem 2.8rem;
-  
+   border-radius: 3px;
+   margin: 0rem 1rem 1rem 1rem ;
+   
+}
+
+.cartBtnBlock{
+    display: flex;
+    flex-direction: row;
 }
 
 .counterBtn{
@@ -103,15 +93,18 @@ li{
     width: 200px;
     margin: 5px;
     border: none;
-    background-color: $secondary-color;
-    color: $cuaternary-color;
+    background-color: $cuaternary-color;
+    color: $primary-color;
     border-radius: 3px;
-
+    
 }
+
+
 
 .cartText{
     font-size:1.8rem;
-    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -128,9 +121,19 @@ li{
 .productsSection{
     align-items: center;
     display: flex;
-    
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
 }
+
+.product{
+    margin: 2rem;
+    width: 32rem;
+    
+}
+
 
 
 
@@ -140,6 +143,7 @@ li{
     display: inline-block;
     background-size: cover;
     margin: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .productName{
@@ -152,3 +156,8 @@ li{
     text-align: center;
     font-size: 1.5rem;
     }
+
+.stockText{
+font-size: 1.5rem;
+color: $cuaternary-color;
+}

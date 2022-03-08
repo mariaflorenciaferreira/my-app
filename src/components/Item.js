@@ -1,6 +1,4 @@
-
-
-
+import ItemCount from "./ItemCount"
 
 function Item(props){
 
@@ -13,9 +11,14 @@ function Item(props){
                     className="productImg"
                 />
             </div>
+
                 <h5 class="productName"> {props.name}</h5>
                 <p class="productPrice">${props.price}</p>
-            </div>          
+
+                <ItemCount initialShoppingCart="1" stock={props.stock}/>        
+
+        </div>   
+               
     )
 
 }
