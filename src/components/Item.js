@@ -15,7 +15,7 @@ function Item(props){
                 <h5 class="productName"> {props.name}</h5>
                 <p class="productPrice">${props.price}</p>
 
-                <ItemCount initialShoppingCart="1" stock={props.stock}/>        
+                <ItemCount initialShoppingCart={1} stock={props.stock}/>        
 
         </div>   
                
