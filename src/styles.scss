@@ -61,7 +61,6 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-     
 }
 
 .counterText{
@@ -71,15 +70,14 @@ li{
 
 
 .cartItemsBtn{
-   width: 45px;
-   font-size: 18px;
-   font-weight: bold;
-   background-color: $ternary-color ;
-   color: $primary-color ;
-   border: none;
-   border-radius: 3px;
-   margin: 0rem 1rem 1rem 1rem ;
-   
+    width: 45px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: $ternary-color ;
+    color: $primary-color ;
+    border: none;
+    border-radius: 3px;
+    margin: 0rem 1rem 1rem 1rem ;
 }
 
 .cartBtnBlock{
@@ -138,9 +136,8 @@ li{
 
 
 
-
 .imgContainer{
-   height: 20%;
+    height: 20%;
     display: inline-block;
     background-size: cover;
     margin: 1rem;
@@ -161,4 +158,44 @@ li{
 .stockText{
 font-size: 1.5rem;
 color: $cuaternary-color;
+}
+
+.detailSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $cuaternary-color;    
+}
+
+.itemDetail{
+    border: solid $primary-color 0.5rem;
+    height: 30rem; 
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.detailImgContainer{
+    height: 30rem;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.detailImg{
+    height: 100%;
+    border: solid $primary-color 0.5rem;
+    padding: 1rem;
+    
+}
+
+.productName{
+    font-size: 2.4rem;
+    letter-spacing: 0.4rem;
+    color: $primary-color;
+    margin-top: 2rem;
+}
+
+.productDescription{
+    color: $primary-color;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    padding: 2rem;
+    
 }
