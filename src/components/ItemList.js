@@ -9,10 +9,13 @@ function ItemList(){
     const plantList=[
         {
             id:1,
-            name: "MONSTERA - Costilla de Adán",
+            name: "Costilla de Adán",
             price:100,
             src:"/img/costilla_adan.jpg",
-            stock:4
+            stock:4,
+            description:"Aca debería haber una explicación de características de la planta",
+            ambiente:"exterior",
+            key:1
         },
         {
             id:2,
@@ -20,7 +23,9 @@ function ItemList(){
             price:200,
             src:"/img/gomero.jpg",
             stock:10,
-            description:"Aca debería haber una explicación de características de la planta"
+            description:"Aca debería haber una explicación de características de la planta",
+            ambiente:"interior",
+            key:2
     
         },
         {
@@ -28,7 +33,10 @@ function ItemList(){
             name:"Sansevieria",
             price:150,
             src:"/img/sansevieria.jpg",
-            stock:6
+            stock:6,
+            description:"Aca debería haber una explicación de características de la planta",
+            ambiente:"exterior",
+            key:3
     
         },
         {
@@ -37,21 +45,30 @@ function ItemList(){
             name:"Haworthia",
             price:500,
             src:"/img/haworthia.jpg",
-            stock:3
+            stock:3,
+            description:"Aca debería haber una explicación de características de la planta",
+            ambiente:"interior",
+            key:4
         },
         {
             id:5,
             name:"Strelitzia",
             price:450,
             src:"/img/strelitzia.jpg",
-            stock:1  
+            stock:1,
+            description:"Aca debería haber una explicación de características de la planta",
+            ambiente:"exterior",
+            key:5
         },
         {
             id:6,
             name:"Tronco brasilero",
             price:450,
             src:"/img/tronco_brasil.jpg",
-            stock:7  
+            stock:7,
+            description:"Aca debería haber una explicación de características de la planta",
+            ambiente:"exterior",
+            key:6
         }
 
     ]
@@ -89,7 +106,6 @@ function ItemList(){
         
         <div className="shopSection">
             <p className="shopTitle">{loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}</p>
-           
             <div >
                 <ul className="productsSection">
                     {products.map((products)=>{

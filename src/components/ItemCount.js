@@ -19,7 +19,7 @@ const ItemCount = (props)=>{
     }
 
     const substractItem =()=>{
-       if (counter>0) {
+       if (counter>=0) {
         setCounter(counter-1) 
         setStock(stock+1)
        } 

@@ -12,7 +12,7 @@ function ItemDetail(props){
                 />
             </div>
             <div className="itemDetail">
-                <h5 className="productName"> {props.item.name}</h5>
+                <h5 className="productDetailName"> {props.item.name}</h5>
                 <p className="productDescription">{props.item.description}</p>
                 </div>
         </div>   

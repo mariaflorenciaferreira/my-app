@@ -1,14 +1,16 @@
 import Header from "./Header"
-import ItemDetailContainer from "./ItemDetailContainer"
-import ItemListContainer from "./ItemListContainer"
+import {BrowserRouter} from "react-router-dom"
+import Main from "./Main"
+
+
+
 
 function App(){
     return (
-        <>
+        <BrowserRouter>
             <Header className="header"/>
-            <ItemListContainer  nombre="Florencia" apellido="Ferreira"/>
-            <ItemDetailContainer/>
-        </>
+            <Main/>
+        </BrowserRouter>
     )
 }
 
