@@ -1,5 +1,6 @@
 import {useState,useEffect} from "react"
 import Item from "./Item"
+import {useParams} from "react-router-dom"
 
 
 
@@ -77,11 +78,14 @@ function ItemList(){
         
     const [loading,setLoading]=useState(true)
     const [products,setProducts]=useState([])
+    const {key}= useParams()
+    
     
     
         useEffect(()=>{
             const PromiseTime= new Promise((res,rej)=>{
                 setTimeout(()=>{
+                    console.log(key)
                     res(plantList)
                     setLoading(false)
                 },2000)
@@ -100,7 +104,7 @@ function ItemList(){
             })
 
 
-        },[])
+        },[key])
 
     return(
         

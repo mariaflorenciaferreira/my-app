@@ -1,6 +1,6 @@
 
 
-function ItemDetail(props){
+function ItemDetail(props,{productList}){
 
     return(
         <div className="detailSection">

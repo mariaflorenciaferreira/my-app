@@ -13,13 +13,13 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
             <Link to="/" className="navLinks"  >INICIO</Link>
-            <Link to="#link" className="navLinks" >INTERIOR</Link>
-            <Link to="#link" className="navLinks" >EXTERIOR</Link>
-            <Link to="#link" className="navLinks" >HERRAMIENTAS</Link>
-            <Link to="#link" className="navLinks" >SUSTRATOS</Link>
-            <Link to="#link" className="navLinks" >TIENDA ONLINE</Link>
+            <Link to="/categoria/:interior" className="navLinks" >INTERIOR</Link>
+            <Link to="/categoria/:exterior" className="navLinks" >EXTERIOR</Link>
+            <Link to="/categoria/:herramientas" className="navLinks" >HERRAMIENTAS</Link>
+            <Link to="/categoria/:sustratos" className="navLinks" >SUSTRATOS</Link>
+            <Link to="./Cart"><CartWidget/></Link>
             
-            <CartWidget/>
+            
             </Nav>
         </Navbar.Collapse>
         </Container>
