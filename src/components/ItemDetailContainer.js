@@ -1,35 +1,38 @@
 import ItemDetail from "./ItemDetail";
 import {useEffect,useState} from "react"
+import{plantList} from "../products"
+import { useParams } from "react-router-dom";
+
+
 
 
 
 function ItemDetailContainer(){
 
-    const firstItem={id:2,
-        name:"Gomero",
-        price:200,
-        src:"/img/gomero.jpg",
-        stock:10,
-        description:"Aca debería haber una explicación de características de la planta",
-        ambiente:"interior",
-        key:2
-    }
+    
 
     const [loading,setLoading]=useState(true)
     const [item,setItem]=useState([])
-    
+    const {id} = useParams();
     
         useEffect(()=>{
             const PromiseTime= new Promise((res,rej)=>{
                 setTimeout(()=>{
-                    res(firstItem)
+                    res(plantList)
                     setLoading(false)
                 },2000)
             })
 
             PromiseTime
-            .then((res)=>{
-                setItem(firstItem);
+            .then((data)=>{
+               const itemRender= data.find((item)=>{
+                    
+                    return item.id.toString()===id
+                })
+                setItem(itemRender)
+
+
+
             })
             .catch((rej)=>{
                 <p>La sección no pudo ser cargada</p>
@@ -45,7 +48,7 @@ function ItemDetailContainer(){
     return(
         
         <div className="itemContainer">
-            <p >{loading ? "Cargando detalles" : <ItemDetail item={item}/>}</p>
+            {loading ? "Cargando detalles" : <ItemDetail item={item}/>}
         </div>           
     )
 
