@@ -10,7 +10,9 @@ function ItemDetailContainer(){
         price:200,
         src:"/img/gomero.jpg",
         stock:10,
-        description:"Aca debería haber una explicación de características de la planta"
+        description:"Aca debería haber una explicación de características de la planta",
+        ambiente:"interior",
+        key:2
     }
 
     const [loading,setLoading]=useState(true)

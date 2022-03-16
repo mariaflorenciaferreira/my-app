@@ -3,8 +3,6 @@ import Item from "./Item"
 import {useParams} from "react-router-dom"
 
 
-
-
 function ItemList(){
 
     const plantList=[
@@ -85,9 +83,9 @@ function ItemList(){
         useEffect(()=>{
             const PromiseTime= new Promise((res,rej)=>{
                 setTimeout(()=>{
-                    console.log(key)
                     res(plantList)
                     setLoading(false)
+                    console.log(key)
                 },2000)
             })
 
