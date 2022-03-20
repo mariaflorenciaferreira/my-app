@@ -1,8 +1,10 @@
+import ItemCount from "./ItemCount"
 
+function ItemDetail(props){
 
-function ItemDetail(props,{productList}){
-
-    return(
+    
+    
+       return(
         <div className="detailSection">
             <div className="detailImgContainer">
                 <img
@@ -14,6 +16,8 @@ function ItemDetail(props,{productList}){
             <div className="itemDetail">
                 <h5 className="productDetailName"> {props.item.name}</h5>
                 <p className="productDescription">{props.item.description}</p>
+                
+              <ItemCount initialShoppingCart={1}/>     
                 </div>
         </div>   
     )

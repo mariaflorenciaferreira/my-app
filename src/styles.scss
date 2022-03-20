@@ -10,10 +10,12 @@ $cuaternary-color:#758C87;
     padding: 0;
     box-sizing: border-box;
     cursor: default;
+    
 }
 
 html{
     font-size: 10px;
+    background-color:$cuaternary-color;
 }
 
 #root{
@@ -99,6 +101,7 @@ li{
 .counterText{
     font-size:1.5rem ;
     text-align: center;
+   
 }
 
 
@@ -124,8 +127,8 @@ li{
     width: 200px;
     margin: 5px;
     border: none;
-    background-color: $cuaternary-color;
-    color: $primary-color;
+    background-color: $secondary-color;
+    color: $cuaternary-color;
     border-radius: 3px;
     
 }
@@ -136,7 +139,7 @@ li{
     font-size:1.8rem;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .shopTitle{
@@ -166,8 +169,6 @@ li{
 }
 
 
-
-
 .imgContainer{
     display: inline-block;
     background-size: cover;
@@ -192,29 +193,43 @@ li{
 .productPrice{
     text-align: center;
     font-size: 1.8rem;
+    color:$ternary-color ;
     }
+
+.openProduct{
+    background-color:$cuaternary-color ;
+    color:$primary-color ;
+    width:20rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    margin-left: 19%;
+   
+}
 
 .stockText{
 font-size: 1.5rem;
-color: $cuaternary-color;
+color:$ternary-color ;
 }
 
 .detailSection{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: $cuaternary-color;    
+    background-color: $cuaternary-color;  
+     
 }
 
 .itemDetail{
     border: solid $primary-color 0.5rem;
     height: 30rem; 
-    margin: 2rem 0rem 2rem 0rem;
+    margin: 12rem 0rem 2rem 0rem;
 }
 
 .detailImgContainer{
     height: 30rem;
-    margin: 2rem 0rem 2rem 0rem;
+    margin: 12rem 0rem 2rem 0rem;
 }
 
 .detailImg{

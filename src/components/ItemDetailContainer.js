@@ -5,11 +5,7 @@ import { useParams } from "react-router-dom";
 
 
 
-
-
 function ItemDetailContainer(){
-
-    
 
     const [loading,setLoading]=useState(true)
     const [item,setItem]=useState([])
@@ -31,8 +27,6 @@ function ItemDetailContainer(){
                 })
                 setItem(itemRender)
 
-
-
             })
             .catch((rej)=>{
                 <p>La sección no pudo ser cargada</p>
@@ -41,18 +35,14 @@ function ItemDetailContainer(){
             .finally(()=>{
                 setLoading(false);
             })
-
-
         },[])
 
     return(
         
         <div className="itemContainer">
-            {loading ? "Cargando detalles" : <ItemDetail item={item}/>}
+            {loading ? "Cargando detalles" : <ItemDetail item={item} stock={item.stock} />}
         </div>           
     )
-
-
 }
 
 

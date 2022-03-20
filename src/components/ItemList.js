@@ -2,7 +2,6 @@
 import Item from "./Item"
 
 
-
 function ItemList(props){
 
     const products=props.plantas
@@ -17,6 +16,10 @@ function ItemList(props){
                         return <Item key={products.id} id={products.id} name={products.name} price={products.price}  img={products.src} stock={products.stock}/>
                     })}
                 </ul>  
+
+                
+
+                
             </div>  
     )
 
