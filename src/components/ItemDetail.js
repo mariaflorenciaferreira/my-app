@@ -17,7 +17,7 @@ function ItemDetail(props){
                 <h5 className="productDetailName"> {props.item.name}</h5>
                 <p className="productDescription">{props.item.description}</p>
                 
-              <ItemCount initialShoppingCart={1}/>     
+              <ItemCount initialShoppingCart={1} stock={props.item.stock}/>     
                 </div>
         </div>   
     )

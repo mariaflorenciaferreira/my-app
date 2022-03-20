@@ -223,12 +223,12 @@ color:$ternary-color ;
 
 .itemDetail{
     border: solid $primary-color 0.5rem;
-    height: 30rem; 
+    height: 40rem; 
     margin: 12rem 0rem 2rem 0rem;
 }
 
 .detailImgContainer{
-    height: 30rem;
+    height: 40rem;
     margin: 12rem 0rem 2rem 0rem;
 }
 
@@ -253,5 +253,7 @@ color:$ternary-color ;
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     padding: 2rem;
+    width: 50rem;
+    margin-bottom: 4rem;
     
 }

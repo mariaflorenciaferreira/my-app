@@ -62,6 +62,26 @@ export const plantList=[
         description:"Aca debería haber una explicación de características de la planta",
         ambiente:"exterior",
         key:6
+    },
+    {
+        id:7,
+        name:"Kit 1",
+        price:900,
+        src:"/img/herramientas1.jpg",
+        stock:4,
+        description:"kit palas etc",
+        ambiente:"herramientas",
+        key:7
+    },
+    {
+        id:8,
+        name:"Fertilizante",
+        price:200,
+        src:"/img/fertilizante.jpg",
+        stock:4,
+        description:"Fertilizante",
+        ambiente:"sustratos",
+        key:8
     }
 
 ]

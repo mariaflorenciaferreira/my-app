@@ -4,13 +4,15 @@ import Main from "./Main"
 
 
 
-
 function App(){
     return (
+   
         <BrowserRouter>
             <Header className="header"/>
             <Main/>
-        </BrowserRouter>
+        </BrowserRouter>  
+   
+    
     )
 }
 

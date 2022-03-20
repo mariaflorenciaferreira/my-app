@@ -1,11 +1,15 @@
-import {useState} from "react"
+import {useState, useContext} from "react"
 
-function ItemCount (props){
+
+const ItemCount= (props)=>{
 
 
     const [counter, setCounter] = useState(props.initialShoppingCart)
     const [stock,setStock]=useState(props.stock)
     const [itemsOnCart,setCart]=useState()
+
+
+   
 
 
     const addItem =()=>{
@@ -35,10 +39,10 @@ function ItemCount (props){
         elementoOculto.style.display = "none";
     }
 
-    function show(id){
-        var elementoMostrar = document.getElementById(id);
-        elementoMostrar.style.display = "block";
-    }
+    // function show(id){
+    //     var elementoMostrar = document.getElementById(id);
+    //     elementoMostrar.style.display = "block";
+    // }
 
     const onAdd=()=>{
         if (counter>0){
