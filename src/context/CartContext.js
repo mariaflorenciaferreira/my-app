@@ -30,15 +30,19 @@ export const CartContextProvider= ({children})=>{
     }
     
 
-    // const removeItem =()=>{
-    //     if (counter>0) {
-    //         setCounter(counter-1)  
-    //         setStock(stock+1)
-    //     }
-    // }
+    const removeItem =(product)=>{
+        if (isInCart(product)) {
+            console.log('removeItem(): esta en el carrito')
+            const cartAux = cart.filter(item=>item.product !==product)
+            setCart(cartAux)
+        }
+    }
 
     const clear=()=>{
-        setCart=([])
+        console.log(cart)
+        setCart([])
+        
+        console.log(cart)
     }
 
     
@@ -55,9 +59,9 @@ export const CartContextProvider= ({children})=>{
         <CartContext.Provider
         value={{
             addItem,
-            // removeItem,
-            // clear,
-            // cart
+            removeItem,
+            clear,
+            cart
         }}>
 
             {children}
