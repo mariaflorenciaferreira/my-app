@@ -1,6 +1,17 @@
+import { useContext } from "react"
+import { CartContext } from "../context/CartContext"
 import ItemCount from "./ItemCount"
 
-function ItemDetail(props){
+const ItemDetail = (props)=>{
+
+    const {addItem,cart}= useContext(CartContext)
+    
+
+    const getCount= count=>{
+        addItem(props,count)
+       
+    }
+    
 
     
     
@@ -17,7 +28,7 @@ function ItemDetail(props){
                 <h5 className="productDetailName"> {props.item.name}</h5>
                 <p className="productDescription">{props.item.description}</p>
                 
-              <ItemCount initialShoppingCart={1} stock={props.item.stock}/>     
+              <ItemCount onAdd={getCount} init={0} stock={props.item.stock}/>     
                 </div>
         </div>   
     )

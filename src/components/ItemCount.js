@@ -1,71 +1,51 @@
 import {useState, useContext} from "react"
 
 
-const ItemCount= (props)=>{
+const ItemCount= ({stock,init,onAdd})=>{
 
+    const [count, setCount] = useState(init)
+    // const [stock,setStock]=useState(stock)
 
-    const [counter, setCounter] = useState(props.initialShoppingCart)
-    const [stock,setStock]=useState(props.stock)
-    const [itemsOnCart,setCart]=useState()
+    // const addCounter =()=>{
+    //     if (count<=stock){
+    //         setCount(count + 1)
+    //         setStock(stock-1)
+    //     }  
+    // }
 
+    // const removeCounter =()=>{
+    //     if (count>0) {
+    //     setCount(count - 1)
+    //     setStock(stock+1)
+    //     } 
+    // }
+    
+    
 
    
 
 
-    const addItem =()=>{
-       if (counter<=props.stock){
-        setCounter(counter+1)
-        setStock(stock-1)
-       }  
-       
-    }
-
-    const substractItem =()=>{
-       if (counter>0) {
-        setCounter(counter-1) 
-        setStock(stock+1)
-       } 
-    }
-    const resetCounter=()=>{
-        if (counter>props.initialShoppingCart){
-            setCounter(0) 
-            setStock(props.stock)
-        } 
-
-    }
-
-    function hide(id){
-        var elementoOculto = document.getElementById(id);
-        elementoOculto.style.display = "none";
-    }
-
-    // function show(id){
-    //     var elementoMostrar = document.getElementById(id);
-    //     elementoMostrar.style.display = "block";
-    // }
-
-    const onAdd=()=>{
-        if (counter>0){
-            setCart({counter}) 
-            console.log("Items en el carrito:" + {itemsOnCart})
-            hide("empty")
-  
-        } 
-    }
-
 
     return <div className="counterContainer" id="blockCounter">
 
-         <div className="cartBtnBlock" >
-            <button className="cartItemsBtn" onClick={addItem}>+</button>
-            <p className="counterText" > {counter}</p>
-            <button className="cartItemsBtn" onClick={substractItem}>-</button>
+        <div className="cartBtnBlock" >
+            <button className="cartItemsBtn" disabled={stock === 0 || count <= 0}
+                      onClick={() => setCount(count - 1)}
+
+        //   onClick={removeCounter} 
+           >-</button>
+            <p className="counterText" >{count} </p>
+
+            <button className="cartItemsBtn"disabled={stock === 0 || count >= stock }
+            onClick={() => setCount(count + 1)}
+        //   onClick={addCounter} 
+          >+</button>
         </div>
         
-        <button className="counterBtn" id="empty" onClick={resetCounter}>VACIAR CARRITO</button>
-        <button className="counterBtn" onClick={onAdd} >COMPLETAR MI COMPRA </button>
+        <button className="counterBtn" id="empty" onClick={()=>{onAdd(count)}} >AGREGAR AL CARRITO</button>
+       
 
-        <p className="stockText">Productos en stock: {stock}</p>
+        <p className="stockText">Productos en stock:{stock} </p>
         
 
     </div>

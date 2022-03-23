@@ -28,7 +28,7 @@ export const plantList=[
         src:"/img/sansevieria.jpg",
         stock:6,
         description:"Aca debería haber una explicación de características de la planta",
-        ambiente:"exterior",
+        ambiente:"interior",
         key:3
 
     },
@@ -82,6 +82,36 @@ export const plantList=[
         description:"Fertilizante",
         ambiente:"sustratos",
         key:8
+    },
+    {
+        id:9,
+        name:"Kit 2",
+        price:900,
+        src:"/img/herramientas2.jpg",
+        stock:4,
+        description:"kit palas etc",
+        ambiente:"herramientas",
+        key:9
+    },
+    {
+        id:10,
+        name:"Kit 3",
+        price:900,
+        src:"/img/herramientas3.jpg",
+        stock:4,
+        description:"kit palas etc",
+        ambiente:"herramientas",
+        key:10
+    },
+    {
+        id:11,
+        name:"Tierra negra",
+        price:900,
+        src:"/img/tierra_negra.jpg",
+        stock:4,
+        description:"Tierra abonada",
+        ambiente:"sustratos",
+        key:10
     }
 
 ]

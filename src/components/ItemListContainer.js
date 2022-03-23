@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { plantList } from "../products";
+import { plantList } from "./products";
 
 function ItemListContainer(props) {
 
@@ -14,8 +14,7 @@ function ItemListContainer(props) {
       setTimeout(() => {
         res(plantList);
         setLoading(false);
-        console.log(ambiente);
-      }, 2000);
+        }, 2000);
     });
     
     PromiseTime.then((data) => {
