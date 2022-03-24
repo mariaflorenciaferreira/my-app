@@ -28,6 +28,10 @@ background-color:$cuaternary-color;
 
 }
 
+.roundedBorder{
+    border-radius: 0.3rem;
+}
+
 .brandText{
     font-size: 3.5rem;
     color: $primary-color;
@@ -106,13 +110,13 @@ li{
 
 
 .cartItemsBtn{
+    @extend .roundedBorder;
     width: 45px;
     font-size: 18px;
     font-weight: bold;
     background-color: $ternary-color ;
     color: $primary-color ;
     border: none;
-    border-radius: 3px;
     margin: 0rem 1rem 1rem 1rem ;
 }
 
@@ -153,7 +157,6 @@ li{
 
 
 .productsSection{
-    
     display: flex;
     height: fit-content;
     flex-wrap: wrap;
@@ -197,12 +200,12 @@ li{
     }
 
 .openProduct{
+    @extend .roundedBorder;
     background-color:$cuaternary-color ;
     color:$primary-color ;
     width:20rem;
     font-size: 1.5rem;
     border: none;
-    border-radius: 0.3rem;
     text-decoration: none;
     margin-left: 19%;
    
@@ -222,8 +225,8 @@ color:$ternary-color ;
 }
 
 .itemDetail{
-    border: solid $primary-color 0.5rem;
-    height: 40rem; 
+    
+    border: solid $primary-color 0.5rem;    height: 40rem; 
     margin: 12rem 0rem 2rem 0rem;
 }
 
@@ -233,6 +236,7 @@ color:$ternary-color ;
 }
 
 .detailImg{
+    
     height: 100%;
     border: solid $primary-color 0.5rem;
     padding: 1rem;
@@ -255,5 +259,62 @@ color:$ternary-color ;
     padding: 2rem;
     width: 50rem;
     margin-bottom: 4rem;
+    
+}
+
+.cartDetail{
+    @extend .roundedBorder;
+    float: right;
+    margin: 12rem 0rem 2rem 3rem;
+    padding: 5rem;
+    justify-content: center;
+    background-color: $secondary-color;
+    
+}
+
+.cartTitle{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom:4rem ;
+}
+
+.productCartCont{
+    display: flex;
+    
+}
+
+.cartItem{
+    font-size: 1.5rem;
+    margin:1rem 0rem 1rem 3rem;
+    width: 5rem;
+
+}
+
+
+
+.deleteItemBtn{
+    margin:0.75rem 2rem;
+    background-color:  $ternary-color;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50%;
+    height: min-content;
+    color:$secondary-color;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+
+.clearBtn{
+    
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    width: 200px;
+    margin: 5rem 2rem 0rem 2rem;
+    border: none;
+    background-color:$ternary-color ;
+    color: $secondary-color;
+    border-radius: 3px;
+   
     
 }

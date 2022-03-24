@@ -34,12 +34,12 @@ const ItemDetail = (props)=>{
               <ItemCount onAdd={getCount} init={0} stock={props.item.stock} /> 
 
               
-             <button className="counterBtn" id="empty" onClick={()=>removeItem(props)} > X </button>    
-                </div>
+               
+            </div>
 
-                {/* <div>
-                    <Cart key={props.item.id}></Cart>
-                </div> */}
+            <div className="cartDetail">
+                <Cart key={props.item.id}></Cart>
+            </div>
 
             
         </div>   
