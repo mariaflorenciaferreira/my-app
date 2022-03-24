@@ -286,8 +286,14 @@ color:$ternary-color ;
 .cartItem{
     font-size: 1.5rem;
     margin:1rem 0rem 1rem 3rem;
-    width: 5rem;
+    width: 14rem;
 
+}
+
+.cartPrice{
+    @extend .cartItem;
+    width: 2rem;
+    margin-right: 0.5rem;
 }
 
 
