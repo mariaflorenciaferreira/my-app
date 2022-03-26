@@ -40,7 +40,7 @@ function ItemDetailContainer(){
     return(
         
         <div className="itemContainer">
-            {loading ? "Cargando detalles" : <ItemDetail item={item} stock={item.stock} />}
+            {loading ? "CARGANDO DETALLES" : <ItemDetail item={item} stock={item.stock} />}
         </div>           
     )
 }

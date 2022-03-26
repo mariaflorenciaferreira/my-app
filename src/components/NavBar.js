@@ -17,7 +17,7 @@ function NavBar() {
             <Link to="/categoria/exterior" className="navLinks" >EXTERIOR</Link>
             <Link to="/categoria/herramientas" className="navLinks" >HERRAMIENTAS</Link>
             <Link to="/categoria/sustratos" className="navLinks" >SUSTRATOS</Link>
-            <Link to="/Cart"><CartWidget/></Link>
+            <Link to="/Cart" ><CartWidget/></Link>
             
             
             </Nav>
