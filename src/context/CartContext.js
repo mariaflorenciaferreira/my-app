@@ -80,7 +80,7 @@ export const CartContextProvider= ({children})=>{
     }
 
     const clear=()=>{
-        console.log(cart)
+       
         setCart([])
         setTotalPrice(0)
         setTotalProducts(0)

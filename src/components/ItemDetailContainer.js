@@ -2,7 +2,7 @@ import ItemDetail from "./ItemDetail";
 import {useEffect,useState} from "react"
 import{plantList} from "./products"
 import { useParams } from "react-router-dom";
-
+import {db} from "./Firebase";
 
 
 function ItemDetailContainer(){

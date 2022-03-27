@@ -1,7 +1,7 @@
 
 export const plantList=[
     {
-        id:1,
+        id:"ijnxQsD04xGdeAJSPLeD",
         name: "Costilla de Adán",
         price:100,
         src:"/img/costilla_adan.jpg",

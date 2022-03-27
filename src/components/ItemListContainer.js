@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { plantList } from "./products";
+// import { plantList } from "./products";
+import {db} from "./Firebase";
+import {getDocs,getCollection, collection} from "firebase/firestore"
+import { CONSTANTS } from "@firebase/util";
 
 function ItemListContainer(props) {
 
@@ -10,32 +13,64 @@ function ItemListContainer(props) {
   const { ambiente } = useParams();
 
   useEffect(() => {
-    const PromiseTime = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(plantList);
-        setLoading(false);
-        }, 2000);
-    });
     
-    PromiseTime.then((data) => {
-        
-        if (ambiente){
-            const productosFiltrados= data.filter((product)=>{
-                return product.ambiente==ambiente
-            })
-            setProducts(productosFiltrados)
+    // PEDIDO LISTA PROD FIREBASE
+    const dataCollection = collection(db,"listaProductos")
+    const documentos =getDocs(dataCollection)
 
-        }else{
-            setProducts(data);
-        }
+    documentos
+        .then((respuesta)=>{
+
+          const aux=[]
+
+          respuesta.forEach((documento)=>{
+            // console.log(documento.data)
+            // console.log(documento.id)
+
+            const planta={
+              id:documento.id,
+              ...documento.data()
+            }
+            aux.push(planta)
+
+          })
+          setProducts(aux)
+
+        })
+        .catch(()=>{
+          
+        })
+
+
+
+    // PEDIDO LISTA PROD SIN FIREBASE
+    // const PromiseTime = new Promise((res, rej) => {
+    //   setTimeout(() => {
+    //     res(plantList);
+    //     setLoading(false);
+    //     }, 2000);
+    // });
+    
+    // PromiseTime.then((data) => {
+        
+    //     if (ambiente){
+    //         const productosFiltrados= data.filter((product)=>{
+    //             return product.ambiente==ambiente
+    //         })
+    //         setProducts(productosFiltrados)
+
+    //     }else{
+    //         setProducts(data);
+    //     }
  
-    })
-      .catch((rej) => {
-        <p>La pagina no pudo ser cargada</p>;
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    // })
+    //   .catch((rej) => {
+    //     <p>La pagina no pudo ser cargada</p>;
+    //   })
+    //   .finally(() => {
+    //     setLoading(false);
+    //   });
+
   }, [ambiente]);
 
   return (
