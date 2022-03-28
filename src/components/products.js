@@ -11,7 +11,7 @@ export const plantList=[
         key:1
     },
     {
-        id:2,
+        id:"zXd9NvCyLfHh70x77dBs",
         name:"Gomero",
         price:200,
         src:"/img/gomero.jpg",

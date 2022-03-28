@@ -26,7 +26,7 @@ const Cart=()=>{
 
       ))}
 
-        <p className="totalCart">Total: ${totalPrice.value}</p>
+        
         <p className="totalCart">Total: ${totalPrice}</p>
         <p className="totalProducts">Productos en carrito: {totalProducts}</p>
         <button className="clearBtn" id="empty" onClick={clear} > VACIAR CARRITO</button>
