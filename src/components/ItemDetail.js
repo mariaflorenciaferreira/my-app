@@ -32,7 +32,7 @@ const ItemDetail = (props)=>{
 
                 
                 
-              <ItemCount onAdd={getCount} init={0} stock={props.item.stock} /> 
+              <ItemCount onAdd={getCount} init={1} stock={props.item.stock} /> 
 
               
                

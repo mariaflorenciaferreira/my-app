@@ -8,9 +8,9 @@ function Main(){
         <main className="mainContainer">
 
             <Routes>
-                <Route path="/" element={<ItemListContainer nombre="Florencia" apellido="Ferreira"/>}/>
+                <Route path="/" element={<ItemListContainer />}/>
                 <Route path="/cart" element={<Cart/>}/>
-                <Route path="/categoria/:ambiente" element={<ItemListContainer nombre="Florencia" apellido="Ferreira"/>}/>
+                <Route path="/categoria/:ambiente" element={<ItemListContainer/>}/>
                 <Route path="/item/:id" element={<ItemDetailContainer/>}/>
                
             </Routes>

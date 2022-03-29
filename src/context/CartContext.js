@@ -12,7 +12,7 @@ export const CartContextProvider= ({children})=>{
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalProducts, setTotalProducts] = useState(0);
-    const [totalItem, setTotalItem] = useState(0);
+    
     
     
     
@@ -66,6 +66,7 @@ export const CartContextProvider= ({children})=>{
     
 
     const removeItem =(product)=>{
+      
 
         if (isInCart(product)) {
 
@@ -76,13 +77,15 @@ export const CartContextProvider= ({children})=>{
             const cartAux = cart.filter(item=>item.product !==product)
 
             
-
             cartAux.forEach((item)=>{
-                auxTotalPrice+=(product.item.price*item.count)
+              
+                auxTotalPrice+=(item.product.item.price*item.count)
                 setTotalPrice(auxTotalPrice)
 
                 auxTotalProducts+=item.count
                 setTotalProducts(auxTotalProducts)
+                
+                console.log(product.item.name)
 
                 
             })
@@ -118,13 +121,8 @@ export const CartContextProvider= ({children})=>{
     }
 
     
-    console.log(cart)
 
-    
 
-    
-
-    
 
     return(
 
