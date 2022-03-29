@@ -28,7 +28,7 @@ const ItemDetail = (props)=>{
             <div className="itemDetail">
                 <h5 className="productDetailName"> {props.item.name}</h5>
                 <p className="productDescription">{props.item.description}</p>
-                <p className="productPrice">{props.item.price}</p>
+                <p className="productPrice">${props.item.price}</p>
 
                 
                 

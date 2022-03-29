@@ -7,6 +7,8 @@ const Cart=()=>{
 
     const{clear,cart,removeItem,totalPrice,totalProducts}=useContext(CartContext)
 
+   
+
     
     return ( 
     <div  className="counterContainer" >
@@ -16,7 +18,8 @@ const Cart=()=>{
         <div key={item.product.item.id} className="productCartCont">
            
           
-
+           <p className="itemCount">{item.count}</p>
+          
           <p className="cartItem">{item.product.item.name}</p>
           <p className="cartPrice">${item.product.item.price}</p>
 

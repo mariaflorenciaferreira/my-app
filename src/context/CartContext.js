@@ -12,25 +12,35 @@ export const CartContextProvider= ({children})=>{
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalProducts, setTotalProducts] = useState(0);
-    // const [totalItem, setTotalItem] = useState(0);
+    const [totalItem, setTotalItem] = useState(0);
+    
+    
+    
+    
     
 
     const addItem =(product,count)=>{
         let cartProduct={product,count}
         let cartAux=[]
-        
-        
 
-       
+
 
         if(isInCart(product)){
             cartProduct=cart.find(item=>item.product===product)
             cartProduct.count=cartProduct.count+count
             cartAux=[...cart]
+
+            
+
+
+           
               
         
         }else{
             cartAux= [cartProduct,...cart]
+            
+
+          
          
         }
 
@@ -38,7 +48,7 @@ export const CartContextProvider= ({children})=>{
 
         let auxTotalPrice=0
         let auxTotalProducts=0
-        let cantItem=0
+        
         
 
         auxTotalPrice=totalPrice
@@ -51,10 +61,6 @@ export const CartContextProvider= ({children})=>{
         setTotalProducts(auxTotalProducts)
 
         
-        // cantItem=(count)
-        // console.log("elementos item:"+ product.item.name + count)
-        
-
 
     }
     
@@ -65,6 +71,7 @@ export const CartContextProvider= ({children})=>{
 
             let auxTotalPrice=0
             let auxTotalProducts=0
+            
             
             const cartAux = cart.filter(item=>item.product !==product)
 
@@ -77,10 +84,7 @@ export const CartContextProvider= ({children})=>{
                 auxTotalProducts+=item.count
                 setTotalProducts(auxTotalProducts)
 
-
-
-
-
+                
             })
 
             setCart(cartAux)
@@ -100,8 +104,9 @@ export const CartContextProvider= ({children})=>{
         setCart([])
         setTotalPrice(0)
         setTotalProducts(0)
-        
         console.log(cart)
+        
+       
     }
 
     
@@ -115,6 +120,12 @@ export const CartContextProvider= ({children})=>{
     
     console.log(cart)
 
+    
+
+    
+
+    
+
     return(
 
         <CartContext.Provider
@@ -125,6 +136,7 @@ export const CartContextProvider= ({children})=>{
             cart,
             totalPrice,
             totalProducts,
+         
             
         }}>
 
