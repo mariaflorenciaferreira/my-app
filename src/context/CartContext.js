@@ -78,7 +78,7 @@ export const CartContextProvider= ({children})=>{
             
 
             cartAux.forEach((item)=>{
-                auxTotalPrice+=(product.price*item.count)
+                auxTotalPrice+=(product.item.price*item.count)
                 setTotalPrice(auxTotalPrice)
 
                 auxTotalProducts+=item.count

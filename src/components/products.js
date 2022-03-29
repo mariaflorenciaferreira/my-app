@@ -22,7 +22,7 @@ export const plantList=[
 
     },
     {
-        id:3,
+        id:"630C9gYuCleLQio8GYj6",
         name:"Sansevieria",
         price:150,
         src:"/img/sansevieria.jpg",
@@ -34,7 +34,7 @@ export const plantList=[
     },
     {
         
-        id:4,
+        id:"qWf1J6Hd4CLKGsjO9KST",
         name:"Haworthia",
         price:500,
         src:"/img/haworthia.jpg",
@@ -44,7 +44,7 @@ export const plantList=[
         key:4
     },
     {
-        id:5,
+        id:"hE7svLxJPfvpET1cDFVR",
         name:"Strelitzia",
         price:450,
         src:"/img/strelitzia.jpg",
@@ -54,7 +54,7 @@ export const plantList=[
         key:5
     },
     {
-        id:6,
+        id:"mhYukCNz9MJFwO0lxS4g",
         name:"Tronco brasilero",
         price:450,
         src:"/img/tronco_brasil.jpg",
@@ -64,7 +64,7 @@ export const plantList=[
         key:6
     },
     {
-        id:7,
+        id:"bOH9M037kNyPdOQdNsJz",
         name:"Kit 1",
         price:900,
         src:"/img/herramientas1.jpg",
@@ -74,7 +74,7 @@ export const plantList=[
         key:7
     },
     {
-        id:8,
+        id:"2NN4eoyuhL5McpwsEMJU",
         name:"Fertilizante",
         price:200,
         src:"/img/fertilizante.jpg",
@@ -84,7 +84,7 @@ export const plantList=[
         key:8
     },
     {
-        id:9,
+        id:"rJFju23CRFs1S4ul16Js",
         name:"Kit 2",
         price:900,
         src:"/img/herramientas2.jpg",
@@ -94,7 +94,7 @@ export const plantList=[
         key:9
     },
     {
-        id:10,
+        id:"wHHzALmOGy4LqLXsj0Bi",
         name:"Kit 3",
         price:900,
         src:"/img/herramientas3.jpg",
@@ -104,7 +104,7 @@ export const plantList=[
         key:10
     },
     {
-        id:11,
+        id:"vLndnD6bQwGFBZN4U5bt",
         name:"Tierra negra",
         price:900,
         src:"/img/tierra_negra.jpg",
