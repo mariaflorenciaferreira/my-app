@@ -111,7 +111,7 @@ export const plantList=[
         stock:4,
         description:"Tierra abonada",
         ambiente:"sustratos",
-        key:10
+        key:11
     }
 
 ]

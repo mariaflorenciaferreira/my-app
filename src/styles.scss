@@ -310,14 +310,12 @@ color:$ternary-color ;
 .cartItem{
     font-size: 1.5rem;
     margin:1rem 2rem;
-    width: 12rem;
     text-align: left;
 
 }
 
 .cartPrice{
     @extend .cartItem;
-    width: 2rem;
     
    
 }
@@ -325,7 +323,7 @@ color:$ternary-color ;
 
 
 .deleteItemBtn{
-    margin-left: 5rem;
+    margin-left: 4rem;
     font-size: 1.4rem;
     border: none;
     font-weight: bold;

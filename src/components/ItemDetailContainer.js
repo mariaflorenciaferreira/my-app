@@ -1,8 +1,9 @@
 import ItemDetail from "./ItemDetail";
 import {useEffect,useState} from "react"
-import{plantList} from "./products"
+// import{plantList} from "./products"
 import { useParams } from "react-router-dom";
 import {db} from "./Firebase";
+import {getDoc,collection,doc,where,query,getDocs} from "firebase/firestore"
 
 
 function ItemDetailContainer(){
@@ -12,30 +13,60 @@ function ItemDetailContainer(){
     const {id} = useParams();
     
         useEffect(()=>{
-            const PromiseTime= new Promise((res,rej)=>{
-                setTimeout(()=>{
-                    res(plantList)
-                    setLoading(false)
-                },2000)
-            })
 
-            PromiseTime
-            .then((data)=>{
-               const itemRender= data.find((item)=>{
+            const dataCollection = collection(db,"listaProductos")
+            
+            const filtroItem= query(dataCollection,where ("id","==",id))
+            const documento=getDocs(filtroItem)
+            
+            documento
+            .then((respuesta)=>{
+                
+                documento
+                // funcion then abreviada
+
+                    .then(respuesta => setItem(respuesta.docs.map( doc=>  doc.data())[0]) )
+                    .catch(()=>{
+                    // agrega toastify
                     
-                    return item.id.toString()===id
-                })
-                setItem(itemRender)
+                    })
+                    .finally(()=> setLoading(false)  )
+                
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
 
-            })
-            .catch((rej)=>{
-                <p>La sección no pudo ser cargada</p>
 
-            })
-            .finally(()=>{
-                setLoading(false);
-            })
-        },[])
+            
+
+
+
+            // const PromiseTime= new Promise((res,rej)=>{
+            //     setTimeout(()=>{
+            //         res(plantList)
+            //         setLoading(false)
+            //     },2000)
+            // })
+
+            // PromiseTime
+            // .then((data)=>{
+            //    const itemRender= data.find((item)=>{
+                    
+            //         return item.id.toString()===id
+            //     })
+            //     setItem(itemRender)
+
+            // })
+            // .catch((rej)=>{
+            //     <p>La sección no pudo ser cargada</p>
+
+            // })
+            // .finally(()=>{
+            //     setLoading(false);
+            // })
+
+        },[id])
 
     return(
         

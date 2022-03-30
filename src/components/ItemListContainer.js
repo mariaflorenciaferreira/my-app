@@ -3,43 +3,55 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 // import { plantList } from "./products";
 import {db} from "./Firebase";
-import {getDocs,getCollection, collection} from "firebase/firestore"
-import { CONSTANTS } from "@firebase/util";
+import {getDocs, collection, query,where} from "firebase/firestore"
+// import { CONSTANTS } from "@firebase/util";
 
 function ItemListContainer(props) {
+
+ 
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const { ambiente } = useParams();
 
   useEffect(() => {
-    
-    // PEDIDO LISTA PROD FIREBASE
+
+    if(!ambiente){
+      // PEDIDO LISTA PROD FIREBASE
     const dataCollection = collection(db,"listaProductos")
     const documentos =getDocs(dataCollection)
+       
 
     documentos
-        .then((respuesta)=>{
+      // funcion then abreviada
 
-          const aux=[]
-
-          respuesta.forEach((documento)=>{
-            // console.log(documento.data)
-            // console.log(documento.id)
-
-            const planta={
-              id:documento.id,
-              ...documento.data()
-            }
-            aux.push(planta)
-
-          })
-          setProducts(aux)
-
-        })
+        .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
         .catch(()=>{
+           // agrega toastify
           
         })
+        .finally(()=> setLoading(false)  )
+
+    }else{
+      const dataCollection = collection(db,"listaProductos")
+      const filtroCategorias= query(dataCollection,where ("ambiente","==",ambiente))
+      const documentos=getDocs(filtroCategorias)
+      
+      
+      documentos
+      // funcion then abreviada
+
+        .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
+        .catch(()=>{
+           // agrega toastify
+          
+        })
+        .finally(()=> setLoading(false)  )
+
+
+    }
+    
+    
 
 
 
@@ -83,7 +95,7 @@ function ItemListContainer(props) {
           <p className="shopTitle">
             {loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}
           </p>
-         <ItemList plantas={products}/>
+         <ItemList plantas={products} />
         </div>
       </div>
     </main>

@@ -74,7 +74,7 @@ export const CartContextProvider= ({children})=>{
             let auxTotalProducts=0
             
             
-            const cartAux = cart.filter(item=>item.product !==product)
+            const cartAux = cart.filter(item=>item.product.item.id !==product.item.id)
 
             
             cartAux.forEach((item)=>{

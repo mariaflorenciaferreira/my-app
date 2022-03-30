@@ -1,6 +1,7 @@
 import {useContext} from "react"
-import { CartContext } from "../context/CartContext"
 
+import { CartContext } from "../context/CartContext"
+import {db} from "../components/Firebase"
 
 
 const Cart=()=>{
@@ -18,10 +19,10 @@ const Cart=()=>{
         <div key={item.product.item.id} className="productCartCont">
            
           
-           <p className="itemCount">{item.count}</p>
+        
           
           <p className="cartItem">{item.product.item.name}</p>
-          <p className="cartPrice">${item.product.item.price}</p>
+          <p className="cartPrice">${item.product.item.price}  x  {item.count}</p>
 
           <button className="deleteItemBtn" id="empty" onClick={()=>removeItem(item.product)} > X </button> 
 
