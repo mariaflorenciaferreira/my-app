@@ -5,9 +5,13 @@ import {useContext} from "react"
 
 function CartWidget(){
 
-    const{cart}=useContext(CartContext)
+    const{cart,totalProducts}=useContext(CartContext)
 
-    return <h3 className={cart.length>0 ? "cartWidgOn":"cartWidgOff"}><FaShoppingCart/></h3>
+    return <div className="cartWidget">
+        <h3 className={cart.length>0 ? "cartWidgOn":"cartWidgOff"}><FaShoppingCart/></h3>
+        <p className={cart.length>0 ? "cartWidgOn":"cartWidgOff" } id="cartWidgetTotal">{totalProducts}</p>
+
+    </div> 
 }
 
 export default CartWidget;

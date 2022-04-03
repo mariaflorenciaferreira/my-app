@@ -60,10 +60,16 @@ background-color:$cuaternary-color;
     
 }
 
+.cartWidget{
+    display: flex;
+    margin-left: 7rem;
+    
+}
+
 .cartWidgOn{
     color: $ternary-color;
-    font-size: 3.3rem;
-    padding-left: 5rem;
+    font-size: 3.8rem;
+    float: left;
    
       
 }
@@ -71,6 +77,21 @@ background-color:$cuaternary-color;
 .cartWidgOff{
     visibility: hidden;
     
+}
+
+
+#cartWidgetTotal{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color:$primary-color ;
+    margin:0rem 0rem 3rem 0.5rem;
+    background-color: $ternary-color;
+    border-radius: 43%;
+    padding: 0rem 0.8rem;
+   
+    
+
 }
 
 
@@ -293,7 +314,7 @@ color:$ternary-color ;
 .cartTitle{
     text-align: center;
     font-size: 2rem;
-    margin-bottom:rem ;
+    margin-bottom:3rem ;
 }
 
 .productCartCont{
@@ -311,13 +332,14 @@ color:$ternary-color ;
     font-size: 1.5rem;
     margin:1rem 2rem;
     text-align: left;
+    width: 11rem;
 
 }
 
 .cartPrice{
     @extend .cartItem;
-    
-   
+    width: 6rem;
+  
 }
 
 
@@ -347,14 +369,26 @@ color:$ternary-color ;
     
 }
 
+.buyBtn{
+    @extend .clearBtn;
+    margin-top:2rem;
+}
+
 .totalCart{
     font-size: 1.7rem;
     color: $ternary-color;
     text-align: left;
+    margin-top: 4rem;
 }
 
 .totalProducts{
     font-size: 1.5rem;
     color: $cuaternary-color;
     text-align: left;
+    
+}
+
+
+.footer{
+    background-color: $cuaternary-color;
 }

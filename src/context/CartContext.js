@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
-
+import {db} from "../components/Firebase";
+import { addDoc,collection, serverTimestamp } from "firebase/firestore"
 
 export const CartContext = createContext()
 
@@ -12,10 +13,6 @@ export const CartContextProvider= ({children})=>{
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalProducts, setTotalProducts] = useState(0);
-    
-    
-    
-    
     
     
 
@@ -30,18 +27,10 @@ export const CartContextProvider= ({children})=>{
             cartProduct.count=cartProduct.count+count
             cartAux=[...cart]
 
-            
-
-
-           
-              
-        
+         
         }else{
             cartAux= [cartProduct,...cart]
             
-
-          
-         
         }
 
         setCart (cartAux)
@@ -55,18 +44,14 @@ export const CartContextProvider= ({children})=>{
         auxTotalPrice+=(product.item.price*count)
         setTotalPrice(auxTotalPrice)
         
-
         auxTotalProducts=totalProducts
         auxTotalProducts+=count
         setTotalProducts(auxTotalProducts)
-
         
-
     }
     
 
     const removeItem =(product)=>{
-      
 
         if (isInCart(product)) {
 
@@ -85,7 +70,6 @@ export const CartContextProvider= ({children})=>{
                 auxTotalProducts+=item.count
                 setTotalProducts(auxTotalProducts)
                 
-                console.log(product.item.name)
 
                 
             })
@@ -107,8 +91,7 @@ export const CartContextProvider= ({children})=>{
         setCart([])
         setTotalPrice(0)
         setTotalProducts(0)
-        console.log(cart)
-        
+    
        
     }
 
@@ -117,6 +100,31 @@ export const CartContextProvider= ({children})=>{
 
         return cart && cart.some(item=>item.product===product)
 
+
+    }
+
+    const buyCart=()=>{
+
+        const ticket={
+            buyer: {
+                nombre:"FLOR",
+                telefono:"333",
+                mail:"SDVDSV@"
+            },
+            items:cart,
+            date: serverTimestamp(),
+            total:"total",
+
+        }
+        const purchaseCollection = collection(db,"purchase")
+        const cartPurchase=addDoc(purchaseCollection,ticket)
+
+        cartPurchase
+        .then(res=>{
+            console.log(res.id)
+            clear()
+        })
+        
 
     }
 
@@ -134,6 +142,7 @@ export const CartContextProvider= ({children})=>{
             cart,
             totalPrice,
             totalProducts,
+            buyCart
          
             
         }}>
