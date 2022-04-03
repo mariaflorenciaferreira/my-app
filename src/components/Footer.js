@@ -13,9 +13,9 @@ function Footer(){
                 
               
 
-                <div className="footer2">                
+                <div className="footer2">
+                    <p className="footerIcon"><FaFacebook/></p>             
                     <p className="footerIcon"><FaInstagram/></p>
-                    <p className="footerIcon"><FaFacebook/></p>
                     <p className="footerIcon"><FaMapMarkedAlt/></p>
                 </div>
                  
