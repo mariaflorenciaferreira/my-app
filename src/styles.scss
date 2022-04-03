@@ -43,7 +43,8 @@ background-color:$cuaternary-color;
 .brandLogo{
     color: $primary-color;
     font-size: 4rem ;
-    margin:1rem 0rem 1.8rem 0rem;
+   margin-bottom: 1rem;
+   margin-left: 1rem;
 
 }
 
@@ -389,6 +390,38 @@ color:$ternary-color ;
 }
 
 
-.footer{
-    background-color: $cuaternary-color;
+
+.footer, .footer1{
+    background-color: $ternary-color;
+    display: flex;
+
+}
+
+.footerBrandLink{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color:$primary-color;
+    margin: 2rem 0rem 1rem 2rem;
+    
+}
+
+.footerBrandLink:hover{
+    color:$cuaternary-color ;
+}
+
+.footer2{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color:$primary-color;
+    margin: 2rem 0rem 0rem 45rem;
+    display: flex
+
+}
+
+
+
+.footerIcon{
+    font-size: 2rem;
+    color: $primary-color;
+    margin: 0rem 2rem;
 }
