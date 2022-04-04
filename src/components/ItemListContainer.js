@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-// import { plantList } from "./products";
 import {db} from "./Firebase";
 import {getDocs, collection, query,where} from "firebase/firestore"
-// import { CONSTANTS } from "@firebase/util";
+
+
+
 
 function ItemListContainer(props) {
 
- 
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -23,14 +23,12 @@ function ItemListContainer(props) {
        
 
     documentos
-      // funcion then abreviada
-
-        .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
-        .catch(()=>{
+      .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
+      .catch(()=>{
            // agrega toastify
           
-        })
-        .finally(()=> setLoading(false)  )
+      })
+      .finally(()=> setLoading(false)  )
 
     }else{
       const dataCollection = collection(db,"listaProductos")
@@ -39,50 +37,14 @@ function ItemListContainer(props) {
       
       
       documentos
-      // funcion then abreviada
-
         .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
         .catch(()=>{
            // agrega toastify
           
         })
         .finally(()=> setLoading(false)  )
-
-
     }
     
-    
-
-
-
-    // PEDIDO LISTA PROD SIN FIREBASE
-    // const PromiseTime = new Promise((res, rej) => {
-    //   setTimeout(() => {
-    //     res(plantList);
-    //     setLoading(false);
-    //     }, 2000);
-    // });
-    
-    // PromiseTime.then((data) => {
-        
-    //     if (ambiente){
-    //         const productosFiltrados= data.filter((product)=>{
-    //             return product.ambiente==ambiente
-    //         })
-    //         setProducts(productosFiltrados)
-
-    //     }else{
-    //         setProducts(data);
-    //     }
- 
-    // })
-    //   .catch((rej) => {
-    //     <p>La pagina no pudo ser cargada</p>;
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
-
   }, [ambiente]);
 
   return (

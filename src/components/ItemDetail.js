@@ -5,7 +5,7 @@ import Cart from "../pages/Cart"
 
 const ItemDetail = (props)=>{
 
-    const {addItem,cart,clear,removeItem}= useContext(CartContext)
+    const {addItem}= useContext(CartContext)
     
 
     const getCount= count=>{

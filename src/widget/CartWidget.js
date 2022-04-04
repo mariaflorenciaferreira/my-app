@@ -8,7 +8,7 @@ function CartWidget(){
     const{cart,totalProducts}=useContext(CartContext)
 
     return <div className="cartWidget">
-        <h3 className={cart.length>0 ? "cartWidgOn":"cartWidgOff"}><FaShoppingCart/></h3>
+        <h3 className="cartWidgOn"><FaShoppingCart/></h3>
         <p className={cart.length>0 ? "cartWidgOn":"cartWidgOff" } id="cartWidgetTotal">{totalProducts}</p>
 
     </div> 

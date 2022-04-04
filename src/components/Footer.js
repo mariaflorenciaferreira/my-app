@@ -11,8 +11,6 @@ function Footer(){
                      <Link to="/" className="footerBrandLink" >VIVERO</Link>
                 </div>
                 
-              
-
                 <div className="footer2">
                     <p className="footerIcon"><FaFacebook/></p>             
                     <p className="footerIcon"><FaInstagram/></p>

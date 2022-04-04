@@ -16,12 +16,17 @@ $cuaternary-color:#758C87;
 html{
     font-size: 10px;
     background-color:$cuaternary-color;
+   
+
 }
 
 #root{
-    background-color: $primary-color;
-
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows:auto 1fr auto;
 }
+
+
 
 .navBar{
 background-color:$cuaternary-color;
@@ -366,13 +371,18 @@ color:$ternary-color ;
     background-color:$ternary-color ;
     color: $secondary-color;
     border-radius: 3px;
-   
+
     
 }
 
 .buyBtn{
     @extend .clearBtn;
     margin-top:2rem;
+    text-decoration: none;
+}
+
+.buyBtn:hover,.clearBtn:hover{
+    color: $primary-color;
 }
 
 .totalCart{
@@ -391,8 +401,16 @@ color:$ternary-color ;
 
 
 
-.footer, .footer1{
+.footer {
+    display: flex;
     background-color: $ternary-color;
+    width: 100%;
+    margin-top: auto;
+    
+   
+}
+
+.footer1{
     display: flex;
 
 }
@@ -410,8 +428,6 @@ color:$ternary-color ;
 }
 
 .footer2{
-    font-size: 1.6rem;
-    text-decoration: none;
     color:$primary-color;
     margin: 1.5rem 0rem 0rem 45rem;
     display: flex
@@ -421,6 +437,7 @@ color:$ternary-color ;
 
 
 .footerIcon{
+    text-decoration: none;
     font-size: 2rem;
     color: $primary-color;
     margin: 0rem 2rem;
