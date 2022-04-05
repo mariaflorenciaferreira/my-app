@@ -442,3 +442,62 @@ color:$ternary-color ;
     color: $primary-color;
     margin: 0rem 2rem;
 }
+
+.checkOutContainer{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.formTitle{
+    font-size: 2.3rem;
+    color:$cuaternary-color;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    margin: 2rem 0rem;
+}
+
+
+.userForm,.checkCartContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 0rem 4rem 4rem;
+    padding: 0rem 10rem;
+    width: 40vw;
+}
+
+.checkCartContainer{
+    width: 50vw;
+}
+
+.productCheckCont{
+    @extend .productCartCont;
+    margin-top: 1rem;
+}
+
+.deleteCart{
+    @extend .deleteItemBtn;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+.formLabel{
+    margin:1rem 0rem;
+    font-size: 1.5rem;
+}
+
+
+.cartTitle{
+    @extend .formTitle;
+    margin-bottom: 6rem;
+}
+
+.checkCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkoutImg{
+    width:8rem;
+}

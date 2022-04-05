@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
-import {db} from "../components/Firebase";
-import { addDoc,collection, serverTimestamp } from "firebase/firestore"
+
 
 export const CartContext = createContext()
 
@@ -98,34 +97,6 @@ export const CartContextProvider= ({children})=>{
     }
 
 
-    const buyCart=()=>{
-
-        
-
-        const ticket={
-            buyer: {
-                nombre:"FLOR",
-                telefono:"333",
-                mail:"SDVDSV@"
-            },
-            items:cart,
-            date: serverTimestamp(),
-            total:{totalPrice},
-
-        }
-        const purchaseCollection = collection(db,"purchase")
-        const cartPurchase=addDoc(purchaseCollection,ticket)
-
-        cartPurchase
-        .then(res=>{
-            console.log(res.id)
-            clear()
-        })
-    }
-    
-
-
-
     return(
         <CartContext.Provider
         value={{
@@ -134,9 +105,7 @@ export const CartContextProvider= ({children})=>{
             clear,
             cart,
             totalPrice,
-            totalProducts,
-            buyCart
-            
+            totalProducts   
             
         }}>
             {children}
