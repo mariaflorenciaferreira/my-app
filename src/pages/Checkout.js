@@ -15,56 +15,90 @@ const Checkout=()=>{
     
     const [checkoutInput,setCheckoutInput]=useState({
 
-        name:"",
-        surname:"",
-        email:"",
+        name:" ",
+        surname:" ",
+        email:" ",
         password:"",
-        address:"",
+        address:" ",
     })
 
     const handleInput=(e)=>{
         e.persist();
+        
         setCheckoutInput({...checkoutInput,[e.target.name]:e.target.value})
+
+    }
+
+    let formValidation = false
+
+    const handleValidation=(e)=>{
+        e.preventDefault()
+
+        if(checkoutInput.name ===" " || checkoutInput.surname ===" " || checkoutInput.email ===" " || checkoutInput.password ===" " || checkoutInput.address ===" "){
+            toast.error("Los datos son necesarios para la compra",{
+                autoClose: 3000,
+                className:"errorToast"
+            })
+            formValidation=false
+            
+        }else{
+            formValidation=true
+            
+        }
 
     }
 
     const buyCart=(e)=>{
         e.preventDefault();
         
-        if (totalPrice !=0){
 
-            const ticket={
+        const ticket={
             
-                buyer: {
-                    nombre:checkoutInput.name,
-                    apellido:checkoutInput.surname,
-                    email:checkoutInput.email,
-                    password:checkoutInput.password,
-                    direccion:checkoutInput.address,
-                },
-                items:cart,
-                date: serverTimestamp(),
-                total:{totalPrice},
+            buyer: {
+                nombre:checkoutInput.name,
+                apellido:checkoutInput.surname,
+                email:checkoutInput.email,
+                password:checkoutInput.password,
+                direccion:checkoutInput.address,
+            },
+            items:cart,
+            date: serverTimestamp(),
+            total:{totalPrice},
+
+        }
+
+        if(formValidation==true){
+
+            if (totalProducts !==0 ){
+                const purchaseCollection = collection(db,"purchase")
+                const cartPurchase=addDoc(purchaseCollection,ticket)
+                
     
-            }
-            const purchaseCollection = collection(db,"purchase")
-            const cartPurchase=addDoc(purchaseCollection,ticket)
-    
-            cartPurchase
-            .then(res=>{
-                toast.success("Compra realizada con éxito",{
-                    autoClose: 3000,
-                    className:"successToast"
+                cartPurchase
+                .then(res=>{
+                    toast.success("Compra realizada con éxito",{
+                        autoClose: 3000,
+                        className:"successToast"
+                    })
+                    clear()
                 })
-                clear()
-            })
+                
+            }else{
+                toast.error("No hay productos en el carrito",{
+                    autoClose: 3000,
+                    className:"errorToast"
+                })
+            }
+
+            
 
         }else{
-            toast.error("No hay productos en el carrito",{
-                autoClose: 3000,
-                className:"errorToast"
-            })
+            toast.error("Los datos son necesarios para completar la compra",{
+            autoClose: 3000,
+            className:"errorToast",
+        })
         }
+
         
     }
 
@@ -86,6 +120,7 @@ const Checkout=()=>{
                             placeholder="Nombre"
                             onChange={handleInput}
                             value={checkoutInput.name}
+                            
                             
                         />
 
@@ -132,8 +167,11 @@ const Checkout=()=>{
                             onChange={handleInput}
                             value={checkoutInput.adress}
                         />
+
+                        <button onClick={handleValidation} className="submitForm">CONFIRMAR DATOS</button>
                         
                     </form>
+    
                 </div>
 
                 <div >

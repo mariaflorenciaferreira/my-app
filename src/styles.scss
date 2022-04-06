@@ -527,3 +527,11 @@ input[value]{
 .errorToast{
     font-size: 1.5rem;
 }
+
+.submitForm{
+    @extend .buyBtn;
+    margin-top :2rem;
+    margin-left: 7rem;
+    
+
+}
