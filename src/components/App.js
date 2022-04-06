@@ -3,6 +3,8 @@ import {BrowserRouter} from "react-router-dom"
 import Main from "./Main"
 import { CartContextProvider } from "../context/CartContext"
 import Footer from "./Footer"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -16,6 +18,7 @@ function App(){
                 <Footer/>
 
             </BrowserRouter>  
+            <ToastContainer />
         </CartContextProvider>
         
     

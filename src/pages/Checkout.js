@@ -3,8 +3,10 @@ import { CartContext } from "../context/CartContext"
 import  {useState} from "react";
 import { addDoc,collection, serverTimestamp } from "firebase/firestore"
 import {db} from "../components/Firebase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import {Link} from "react-router-dom"
+
 
 
 const Checkout=()=>{
@@ -29,31 +31,41 @@ const Checkout=()=>{
     const buyCart=(e)=>{
         e.preventDefault();
         
+        if (totalPrice !=0){
 
-        const ticket={
+            const ticket={
             
-            buyer: {
-                nombre:checkoutInput.name,
-                apellido:checkoutInput.surname,
-                email:checkoutInput.email,
-                password:checkoutInput.password,
-                direccion:checkoutInput.address,
-            },
-            items:cart,
-            date: serverTimestamp(),
-            total:{totalPrice},
+                buyer: {
+                    nombre:checkoutInput.name,
+                    apellido:checkoutInput.surname,
+                    email:checkoutInput.email,
+                    password:checkoutInput.password,
+                    direccion:checkoutInput.address,
+                },
+                items:cart,
+                date: serverTimestamp(),
+                total:{totalPrice},
+    
+            }
+            const purchaseCollection = collection(db,"purchase")
+            const cartPurchase=addDoc(purchaseCollection,ticket)
+    
+            cartPurchase
+            .then(res=>{
+                toast.success("Compra realizada con éxito",{
+                    autoClose: 3000,
+                    className:"successToast"
+                })
+                clear()
+            })
 
+        }else{
+            toast.error("No hay productos en el carrito",{
+                autoClose: 3000,
+                className:"errorToast"
+            })
         }
-        const purchaseCollection = collection(db,"purchase")
-        const cartPurchase=addDoc(purchaseCollection,ticket)
-
-        cartPurchase
-        .then(res=>{
-            console.log(res.id)
-            console.log(ticket)
-            // mensaje de cmpra completa!
-            clear()
-        })
+        
     }
 
     return (          
@@ -70,6 +82,8 @@ const Checkout=()=>{
                             className="name"
                             name="name"
                             type="text"
+                            autoComplete="off"
+                            placeholder="Nombre"
                             onChange={handleInput}
                             value={checkoutInput.name}
                             
@@ -80,6 +94,8 @@ const Checkout=()=>{
                             className="surname"
                             name="surname"
                             type="text"
+                            autoComplete="off"
+                            placeholder="Apellido"
                             onChange={handleInput}
                             value={checkoutInput.surname}
                         />
@@ -89,6 +105,8 @@ const Checkout=()=>{
                             className="email"
                             name="email"
                             type="email"
+                            autoComplete="off"
+                            placeholder="Email"
                             onChange={handleInput}
                             value={checkoutInput.email}
                         />
@@ -98,6 +116,8 @@ const Checkout=()=>{
                             className="password"
                             name="password"
                             type="password"
+                            autoComplete="off"
+                            placeholder="Contraseña"
                             onChange={handleInput}
                             value={checkoutInput.password}
                         />
@@ -107,6 +127,8 @@ const Checkout=()=>{
                             className="adress"
                             name="adress"
                             type="text"
+                            autoComplete="off"
+                            placeholder="Dirección"
                             onChange={handleInput}
                             value={checkoutInput.adress}
                         />

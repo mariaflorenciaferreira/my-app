@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 
 const Cart=()=>{
 
-    const{clear,cart,removeItem,totalPrice,totalProducts,buyCart}=useContext(CartContext)
+    const{clear,cart,removeItem,totalPrice,totalProducts}=useContext(CartContext)
 
    
 

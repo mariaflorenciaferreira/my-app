@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import {db} from "./Firebase";
 import {getDocs, collection, query,where} from "firebase/firestore"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -13,6 +14,7 @@ function ItemListContainer(props) {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const { ambiente } = useParams();
+  
 
   useEffect(() => {
 
@@ -25,7 +27,7 @@ function ItemListContainer(props) {
     documentos
       .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
       .catch(()=>{
-           // agrega toastify
+        toast.error("Ya estas en esta categoría.")
           
       })
       .finally(()=> setLoading(false)  )
@@ -39,7 +41,10 @@ function ItemListContainer(props) {
       documentos
         .then(respuesta => setProducts(respuesta.docs.map( doc=>  doc.data())) )
         .catch(()=>{
-           // agrega toastify
+          toast.error("La categoría de productos no está disponible.",{
+            autoClose: 3000,
+            className:"toast",
+          })
           
         })
         .finally(()=> setLoading(false)  )
@@ -50,9 +55,7 @@ function ItemListContainer(props) {
   return (
     <main>
       <div className="ItemListContainer">
-        <h2 className="greetings">
-          Bienvenido {props.nombre} {props.apellido}!{" "}
-        </h2>
+        
         <div className="shopSection">
           <p className="shopTitle">
             {loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}

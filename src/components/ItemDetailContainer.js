@@ -3,6 +3,8 @@ import {useEffect,useState} from "react"
 import { useParams } from "react-router-dom";
 import {db} from "./Firebase";
 import {collection,where,query,getDocs} from "firebase/firestore"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function ItemDetailContainer(){
@@ -24,14 +26,20 @@ function ItemDetailContainer(){
                 documento
                     .then(respuesta => setItem(respuesta.docs.map( doc=>  doc.data())[0]) )
                     .catch(()=>{
-                    // agrega toastify
+                        toast.error("El detalle del producto no está disponible",{
+                            autoClose: 3000,
+                            className:"toast",
+                        })
                     
                     })
                     .finally(()=> setLoading(false)  )
                 
             })
             .catch((error)=>{
-                console.log(error)
+                toast.error("El detalle del producto no está disponible",{
+                    autoClose: 3000,
+                    className:"toast",
+                })
             })
 
 
