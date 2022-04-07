@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import {db} from "./Firebase";
 import {getDocs, collection, query,where} from "firebase/firestore"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Puff  } from 'react-loading-icons'
 
 
 function ItemListContainer(props) {
@@ -58,7 +58,7 @@ function ItemListContainer(props) {
         
         <div className="shopSection">
           <p className="shopTitle">
-            {loading ? "CARGANDO PRODUCTOS" : "PRODUCTOS DISPONIBLES"}
+            {loading ? <Puff stroke="#474D46" /> : "PRODUCTOS DISPONIBLES"}
           </p>
          <ItemList plantas={products} />
         </div>

@@ -3,9 +3,9 @@ import {useEffect,useState} from "react"
 import { useParams } from "react-router-dom";
 import {db} from "./Firebase";
 import {collection,where,query,getDocs} from "firebase/firestore"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Puff  } from 'react-loading-icons'
 
 function ItemDetailContainer(){
 
@@ -48,7 +48,7 @@ function ItemDetailContainer(){
     return(
         
         <div className="itemContainer">
-            {loading ? "CARGANDO DETALLES" : <ItemDetail item={item} stock={item.stock} />}
+            {loading ? <Puff stroke="#474D46" /> : <ItemDetail item={item} stock={item.stock} />}
         </div>           
     )
 }

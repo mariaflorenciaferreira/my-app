@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext"
 import  {useState} from "react";
 import { addDoc,collection, serverTimestamp } from "firebase/firestore"
 import {db} from "../components/Firebase";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -29,7 +29,7 @@ const Checkout=()=>{
 
     }
 
-    let formValidation = false
+    let formValidation = true
 
     const handleValidation=(e)=>{
         e.preventDefault()
@@ -40,6 +40,8 @@ const Checkout=()=>{
                 className:"errorToast"
             })
             formValidation=false
+            console.log(formValidation)
+            e.target.reset()
             
         }else{
             formValidation=true
@@ -67,7 +69,7 @@ const Checkout=()=>{
 
         }
 
-        if(formValidation==true){
+        if(formValidation===true){
 
             if (totalProducts !==0 ){
                 const purchaseCollection = collection(db,"purchase")
@@ -96,6 +98,7 @@ const Checkout=()=>{
             toast.error("Los datos son necesarios para completar la compra",{
             autoClose: 3000,
             className:"errorToast",
+            
         })
         }
 
