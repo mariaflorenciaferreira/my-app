@@ -101,7 +101,6 @@ background-color:$cuaternary-color;
 }
 
 
-
 h2{
     color:$ternary-color;
 }
@@ -110,17 +109,6 @@ h2{
     color: $secondary-color;
 }
 
-.greetings{
-    font-size: 4rem;
-    color:$ternary-color;
-    letter-spacing: 0.4rem;
-    text-align: center;
-    margin-top: 4rem;
-    margin-left: 4rem;
-    height: 6rem;
-    
-    
-}
 
 
 
@@ -135,7 +123,7 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    
 }
 
 .counterText{
@@ -165,10 +153,10 @@ li{
     font-size: 1.5rem;
     padding: 0.3rem;
     width: 200px;
-    margin: 5px;
+    margin-bottom: 5px;
     border: none;
     background-color: $secondary-color;
-    color: $cuaternary-color;
+    color: $ternary-color;
     border-radius: 3px;
     
 }
@@ -198,6 +186,7 @@ li{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: $primary-color;
     
 }
 
@@ -256,7 +245,7 @@ color:$ternary-color ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: $cuaternary-color;  
+    background-color: $primary-color;  
      
 }
 
@@ -266,12 +255,12 @@ color:$ternary-color ;
     font-size: 1.8rem;
     color: $ternary-color;
     text-align: center;
-    background-color: $cuaternary-color;
+    background-color: $primary-color;
 }
 
 .itemDetail{
     
-    border: solid $primary-color 0.5rem;    height: 40rem; 
+    border: solid $cuaternary-color 0.5rem;    height: 40rem; 
     margin: 12rem 0rem 2rem 0rem;
 }
 
@@ -283,7 +272,7 @@ color:$ternary-color ;
 .detailImg{
     
     height: 100%;
-    border: solid $primary-color 0.5rem;
+    border: solid $cuaternary-color 0.5rem;
     padding: 1rem;
     
 }
@@ -291,14 +280,14 @@ color:$ternary-color ;
 .productDetailName{
     font-size: 2.4rem;
     letter-spacing: 0.4rem;
-    color: $primary-color;
+    color: $ternary-color;
     margin-top: 4rem;
     text-align: center;
     height:3rem;
 }
 
 .productDescription{
-    color: $primary-color;
+    color: $ternary-color;
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     padding: 2rem;
@@ -366,7 +355,7 @@ color:$ternary-color ;
     font-size: 1.5rem;
     padding: 0.3rem;
     width: 200px;
-    margin: 5rem 2rem 0rem 2rem;
+    margin: 2rem 2rem 0rem 2rem;
     border: none;
     background-color:$ternary-color ;
     color: $secondary-color;
@@ -403,11 +392,10 @@ color:$ternary-color ;
 
 .footer {
     display: flex;
-    background-color: $ternary-color;
+    background-color: $cuaternary-color;
     width: 100%;
     margin-top: auto;
-    
-   
+
 }
 
 .footer1{
@@ -481,33 +469,82 @@ color:$ternary-color ;
     margin-top: 1rem;
 }
 
-.formLabel{
-    margin:1rem 0rem;
-    font-size: 1.7rem;
-    color: $ternary-color;
+.inputContainer{
+    position: relative;
+    margin:2rem 0rem;
+    
 }
+
+.formLabel{
+    font-size: 1.5rem;
+    color:$ternary-color ;
+    position: absolute;
+    left:0.5rem;
+    top:0.1rem;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+
+
 
 input{
     height: 2.8rem;
     font-size: 1.7rem;
     padding: 1rem;
+    background: none;
+    display: block;
+    border: none;
+    border-bottom: solid $ternary-color 0.1rem;
+    width: 100%;
 }
+
+input:focus{
+    outline: none;
+    color:$ternary-color;
+}
+
+input:focus~.formLabel, input:valid~.formLabel{
+    top: -1.4rem;
+    font-size: 1.4rem;
+    color:$cuaternary-color;
+}	
 
 input[value]{
     font-size: 1.5rem;
     padding: 1rem;
 }
 
-::placeholder{
-    color:$ternary-color; 
-    padding: 1rem;
-    font-size: 1.5rem;
+.bar{
+    position:relative;
+    display: block;
+    width: 100%;
+}
+
+.bar::before{
+    content: "";
+    height: 0.2rem;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: $cuaternary-color;
+    transition: 0.3s ease width;
+    left:0;
+}
+
+input:focus~.bar::before{
+    width: 100%
+}
+
+.submitForm{
+    @extend .buyBtn;
+    margin-top :2rem;
+    margin-left: 5rem;
 }
 
 
 .cartTitle{
     @extend .formTitle;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .checkCart{
@@ -528,10 +565,3 @@ input[value]{
     font-size: 1.5rem;
 }
 
-.submitForm{
-    @extend .buyBtn;
-    margin-top :2rem;
-    margin-left: 7rem;
-    
-
-}

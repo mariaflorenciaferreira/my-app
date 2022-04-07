@@ -34,26 +34,52 @@ const Checkout=()=>{
     const handleValidation=(e)=>{
         e.preventDefault()
 
-        if(checkoutInput.name ===" " || checkoutInput.surname ===" " || checkoutInput.email ===" " || checkoutInput.password ===" " || checkoutInput.address ===" "){
-            toast.error("Los datos son necesarios para la compra",{
+        let mailValidator=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+        if(checkoutInput.name==" "){
+            toast.error("El nombre no es válido",{
                 autoClose: 3000,
                 className:"errorToast"
             })
-            formValidation=false
-            console.log(formValidation)
-            e.target.reset()
-            
-        }else{
-            formValidation=true
-            
+            formValidation=false     
         }
 
+        if(checkoutInput.surname==" "){
+            toast.error("El apellido no es válido",{
+                autoClose: 3000,
+                className:"errorToast"
+            })
+            formValidation=false    
+        }
+        
+        if(!mailValidator.test(checkoutInput.email)){
+            toast.error("El mail no es válido",{
+                autoClose: 3000,
+                className:"errorToast"
+            })
+            formValidation=false    
+        }
+
+        if(checkoutInput.password.length<3){
+            toast.error("La contraseña debe tener más de 3 caractéres",{
+                autoClose: 3000,
+                className:"errorToast"
+            })
+            formValidation=false    
+        }
+
+        if(checkoutInput.address==" "){
+            toast.error("La dirección no es válida",{
+                autoClose: 3000,
+                className:"errorToast"
+            })
+            formValidation=false    
+        }
     }
 
     const buyCart=(e)=>{
         e.preventDefault();
         
-
         const ticket={
             
             buyer: {
@@ -66,16 +92,14 @@ const Checkout=()=>{
             items:cart,
             date: serverTimestamp(),
             total:{totalPrice},
-
         }
 
-        if(formValidation===true){
 
+        if(formValidation){
             if (totalProducts !==0 ){
                 const purchaseCollection = collection(db,"purchase")
                 const cartPurchase=addDoc(purchaseCollection,ticket)
                 
-    
                 cartPurchase
                 .then(res=>{
                     toast.success("Compra realizada con éxito",{
@@ -92,89 +116,108 @@ const Checkout=()=>{
                 })
             }
 
-            
-
         }else{
             toast.error("Los datos son necesarios para completar la compra",{
             autoClose: 3000,
             className:"errorToast",
-            
         })
         }
-
-        
     }
+        
+        
+        
+    
 
     return (          
             <div className="checkOutContainer">
                 
                 
-
                 <div>
                     <h3 className="formTitle">INGRESA TUS DATOS</h3>
                     <form className="userForm">
                         
-                        <label className="formLabel">Nombre</label>
-                        <input
-                            className="name"
-                            name="name"
-                            type="text"
-                            autoComplete="off"
-                            placeholder="Nombre"
-                            onChange={handleInput}
-                            value={checkoutInput.name}
+                        <div className="inputContainer">
                             
+                            <input
+                                className="name"
+                                id="name"
+                                name="name"
+                                type="text"
+                                autoComplete="off"
+                                onChange={handleInput}
+                                value={checkoutInput.name}
+                                required
+                            />
+                            <span className="bar"></span>
+                            <label className="formLabel">Nombre</label>
+                        </div>
+
+                        <div className="inputContainer">
                             
-                        />
+                            <input
+                                className="surname"
+                                id="surname"
+                                name="surname"
+                                type="text"
+                                autoComplete="off"
+                                onChange={handleInput}
+                                value={checkoutInput.surname}
+                                required
+                            />
+                            <span className="bar"></span>
+                            <label className="formLabel">Apellido</label>
+                        </div>
+                        
+                        <div className="inputContainer">
+                            <input
+                                className="email"
+                                id="email"
+                                name="email"
+                                type="email"
+                                autoComplete="off"
+                                onChange={handleInput}
+                                value={checkoutInput.email}
+                                required
+                            />
+                            <span className="bar"></span>
+                            <label className="formLabel">Email</label>
+                        </div>
+                        
 
-                        <label className="formLabel">Apellido</label>
-                        <input
-                            className="surname"
-                            name="surname"
-                            type="text"
-                            autoComplete="off"
-                            placeholder="Apellido"
-                            onChange={handleInput}
-                            value={checkoutInput.surname}
-                        />
+                        <div className="inputContainer">
+                            <input
+                                className="password"
+                                id="password"
+                                name="password"
+                                type="password"
+                                autoComplete="off"
+                                onChange={handleInput}
+                                value={checkoutInput.password}
+                                required
+                            />
+                            <span className="bar"></span>
+                            <label className="formLabel">Contraseña</label>
+                            
+                        </div>    
 
-                        <label className="formLabel">Email</label>
-                        <input
-                            className="email"
-                            name="email"
-                            type="email"
-                            autoComplete="off"
-                            placeholder="Email"
-                            onChange={handleInput}
-                            value={checkoutInput.email}
-                        />
-
-                        <label className="formLabel">Contraseña</label>
-                        <input
-                            className="password"
-                            name="password"
-                            type="password"
-                            autoComplete="off"
-                            placeholder="Contraseña"
-                            onChange={handleInput}
-                            value={checkoutInput.password}
-                        />
-
-                        <label className="formLabel">Dirección</label>
-                        <input
-                            className="adress"
-                            name="adress"
-                            type="text"
-                            autoComplete="off"
-                            placeholder="Dirección"
-                            onChange={handleInput}
-                            value={checkoutInput.adress}
-                        />
-
+                        <div className="inputContainer">
+                            <input
+                                className="address"
+                                id="address"
+                                name="address"
+                                type="text"
+                                autoComplete="off"
+                                onChange={handleInput}
+                                value={checkoutInput.address}
+                                required
+                            />
+                            <span className="bar"></span>
+                            <label  className="formLabel">Dirección</label>
+                        </div>
+                        
                         <button onClick={handleValidation} className="submitForm">CONFIRMAR DATOS</button>
                         
                     </form>
-    
                 </div>
 
                 <div >
