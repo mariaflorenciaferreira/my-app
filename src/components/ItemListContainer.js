@@ -58,7 +58,7 @@ function ItemListContainer(props) {
         
         <div className="shopSection">
           <p className="shopTitle">
-            {loading ? <Puff stroke="#474D46" /> : "PRODUCTOS DISPONIBLES"}
+            {loading ? <Puff stroke="#474D46" /> : " "}
           </p>
          <ItemList plantas={products} />
         </div>

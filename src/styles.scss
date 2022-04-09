@@ -72,12 +72,20 @@ background-color:$cuaternary-color;
     
 }
 
+.cartWidget:hover{
+    
+    // transform: translateZ(-5%) ;
+    transition-duration: 100ms;
+    transform: perspective(0.05px) translateZ(0.05px);
+    
+
+}
+
 .cartWidgOn{
     color: $ternary-color;
     font-size: 3.8rem;
     float: left;
-   
-      
+
 }
 
 .cartWidgOff{
