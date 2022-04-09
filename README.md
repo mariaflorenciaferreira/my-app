@@ -1,18 +1,23 @@
-# Getting Started with Create React App
+# PROYECTO VIVERO
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## This project
 
-In the project directory, you can run:
+This e-commerce is my React JS final project. In order to learn and practice react realted tools, me and my classmates had to learn to use hooks and to include firebase in our app.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frameworks and other tools
+
+* bootstrap (5.1.3)
+* sass (1.49.9)
+* images: pexels.com
+* react-bootstrap (2.1.2)
+* react-loading-icons (1.0.8)
+* react-router-dom (6.2.2)
+* react-toastify (8.2.0)
+* firebase (9.6.10)
 
 ### `npm test`
 
