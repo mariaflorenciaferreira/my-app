@@ -204,6 +204,13 @@ li{
     margin-left: 5.5rem;
 }
 
+.imgContainer:hover{
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-5%) ;
+    transition-duration: 300ms;
+}
+
+
 .productImg{
     height: 30rem;
     
@@ -268,6 +275,7 @@ color:$ternary-color ;
     height: 40rem;
     margin: 12rem 0rem 2rem 0rem;
 }
+
 
 .detailImg{
     
@@ -357,8 +365,8 @@ color:$ternary-color ;
     width: 200px;
     margin: 2rem 2rem 0rem 2rem;
     border: none;
-    background-color:$ternary-color ;
-    color: $secondary-color;
+    background-color:$secondary-color ;
+    color:$ternary-color ;
     border-radius: 3px;
 
     
@@ -368,10 +376,17 @@ color:$ternary-color ;
     @extend .clearBtn;
     margin-top:2rem;
     text-decoration: none;
+    background-color:$ternary-color ;
+    color: $secondary-color;
 }
 
-.buyBtn:hover,.clearBtn:hover{
+.buyBtn:hover{
     color: $primary-color;
+}
+
+.clearBtn:hover{
+   
+    color: $cuaternary-color;
 }
 
 .totalCart{

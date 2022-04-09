@@ -75,6 +75,18 @@ const Checkout=()=>{
             })
             formValidation=false    
         }
+
+        if (checkoutInput.name!==" " && checkoutInput.surname!==" " && mailValidator.test(checkoutInput.email) && checkoutInput.password.length>3 && checkoutInput.address!==" "){
+            formValidation=true
+
+            toast.success("Datos ingresados correctamente",{
+                autoClose: 3000,
+                className:"successToast"
+               
+            })
+            
+           
+        }
     }
 
     const buyCart=(e)=>{
@@ -241,7 +253,6 @@ const Checkout=()=>{
 
                             <button className="buyBtn"  onClick={buyCart}>PAGAR</button>
                         </div>
-
 
                     </div>
                         
