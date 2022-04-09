@@ -87,14 +87,15 @@ background-color:$cuaternary-color;
 
 
 #cartWidgetTotal{
-    display: flex;
-    align-items: center;
-    font-size: 1.3rem;
+    
+    font-size: 1.2rem;
     color:$primary-color ;
     margin:0rem 0rem 3rem 0.5rem;
     background-color: $ternary-color;
-    border-radius: 43%;
-    padding: 0rem 0.8rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
    
     
 
@@ -266,9 +267,10 @@ color:$ternary-color ;
 }
 
 .itemDetail{
-    
-    border: solid $cuaternary-color 0.5rem;    height: 40rem; 
+    border: solid $cuaternary-color 0.5rem;  
+    height: 40rem; 
     margin: 12rem 0rem 2rem 0rem;
+    border-left: none;
 }
 
 .detailImgContainer{
