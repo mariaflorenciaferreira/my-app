@@ -8,7 +8,7 @@ function NavBar() {
         <Container>
         
         <LogoIcon/>
-        <Navbar.Brand as={Link} to="/"><h1 className="brandText">VIVERO</h1></Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" ><h1 className="brandText">VIVERO</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

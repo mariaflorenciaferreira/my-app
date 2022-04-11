@@ -45,6 +45,10 @@ background-color:$cuaternary-color;
     margin-right: 2rem;
 }
 
+.brandText:hover{
+    color:$ternary-color ;
+}
+
 .brandLogo{
     color: $primary-color;
     font-size: 4rem ;
@@ -74,7 +78,7 @@ background-color:$cuaternary-color;
 
 .cartWidget:hover{
     
-    // transform: translateZ(-5%) ;
+
     transition-duration: 100ms;
     transform: perspective(0.05px) translateZ(0.05px);
     
@@ -114,9 +118,6 @@ h2{
     color:$ternary-color;
 }
 
-.cartText{
-    color: $secondary-color;
-}
 
 
 
@@ -176,6 +177,9 @@ li{
     font-size:1.8rem;
     justify-content: center;
     align-items: center;
+   color: $secondary-color;
+    
+    
 
 }
 
@@ -328,6 +332,7 @@ color:$ternary-color ;
     text-align: center;
     font-size: 2rem;
     margin-bottom:3rem ;
+    margin-left: 4rem;
 }
 
 .productCartCont{
@@ -437,7 +442,7 @@ color:$ternary-color ;
 }
 
 .footerBrandLink:hover{
-    color:$cuaternary-color ;
+    color:$ternary-color ;
 }
 
 .footer2{

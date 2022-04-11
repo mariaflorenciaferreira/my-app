@@ -13,7 +13,7 @@ const Cart=()=>{
     
     return ( 
     <div  className="counterContainer" >
-      <h2 className="cartTitle">Tu compra</h2>
+      <h2 className="cartTitle">TU COMPRA</h2>
 
       {cart.map(item=>(
         <div key={item.product.item.id} className="productCartCont">
