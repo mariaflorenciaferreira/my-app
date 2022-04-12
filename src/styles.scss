@@ -15,7 +15,7 @@ $cuaternary-color:#758C87;
 
 html{
     font-size: 10px;
-    background-color:$cuaternary-color;
+    background-color:$primary-color;
    
 
 }
@@ -63,11 +63,23 @@ background-color:$cuaternary-color;
     text-decoration: none;
     margin-left: 5rem; 
     margin-top: 1rem;
+    margin-bottom: 0rem;
 }
 
 .navLinks:hover{
     color: $ternary-color;
     
+}
+
+.active{
+    border-bottom: solid $secondary-color 0.1rem;
+    border-top: solid $secondary-color 0.1rem;
+}
+
+.active:hover{
+    border-bottom: solid $ternary-color 0.1rem;
+    border-top: solid $ternary-color 0.1rem;
+
 }
 
 .cartWidget{
@@ -77,29 +89,22 @@ background-color:$cuaternary-color;
 }
 
 .cartWidget:hover{
-    
-
     transition-duration: 100ms;
     transform: perspective(0.05px) translateZ(0.05px);
-    
-
 }
 
 .cartWidgOn{
     color: $ternary-color;
     font-size: 3.8rem;
     float: left;
-
 }
 
 .cartWidgOff{
     visibility: hidden;
-    
 }
 
 
-#cartWidgetTotal{
-    
+#cartWidgetTotal{  
     font-size: 1.2rem;
     color:$primary-color ;
     margin:0rem 0rem 3rem 0.5rem;
@@ -108,18 +113,12 @@ background-color:$cuaternary-color;
     height: 2rem;
     width: 2rem;
     text-align: center;
-   
-    
-
 }
 
 
 h2{
     color:$ternary-color;
 }
-
-
-
 
 
 li{
@@ -132,14 +131,12 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .counterText{
     font-size:1.5rem ;
     text-align: center;
-   
 }
 
 
@@ -177,10 +174,7 @@ li{
     font-size:1.8rem;
     justify-content: center;
     align-items: center;
-   color: $secondary-color;
-    
-    
-
+    color: $secondary-color;
 }
 
 .shopTitle{
@@ -199,14 +193,12 @@ li{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: $primary-color;
-    
+    background-color: $primary-color; 
 }
 
 .product{
     margin:3rem 2rem 3rem 2rem;
     width: 32rem;
-   
 }
 
 
@@ -226,7 +218,6 @@ li{
 
 .productImg{
     height: 30rem;
-    
 }
 
 .productName{
@@ -235,14 +226,13 @@ li{
     font-size: 2rem;
     height: 3rem;
     margin-top: 1.5rem;
-    
 }
 
 .productPrice{
     text-align: center;
     font-size: 1.8rem;
     color:$ternary-color ;
-    }
+}
 
 .openProduct{
     @extend .roundedBorder;
@@ -252,8 +242,7 @@ li{
     font-size: 1.5rem;
     border: none;
     text-decoration: none;
-    margin-left: 19%;
-   
+    margin-left: 19%; 
 }
 
 .stockText{
@@ -266,7 +255,6 @@ color:$ternary-color ;
     flex-wrap: wrap;
     justify-content: center;
     background-color: $primary-color;  
-     
 }
 
 .itemContainer{
@@ -295,8 +283,7 @@ color:$ternary-color ;
     
     height: 100%;
     border: solid $cuaternary-color 0.5rem;
-    padding: 1rem;
-    
+    padding: 1rem; 
 }
 
 .productDetailName{
@@ -325,7 +312,6 @@ color:$ternary-color ;
     padding: 5rem;
     justify-content: center;
     background-color: $secondary-color;
-    
 }
 
 .cartTitle{
@@ -351,13 +337,11 @@ color:$ternary-color ;
     margin:1rem 2rem;
     text-align: left;
     width: 11rem;
-
 }
 
 .cartPrice{
     @extend .cartItem;
     width: 6rem;
-  
 }
 
 
@@ -370,7 +354,6 @@ color:$ternary-color ;
     background-color:transparent;
     color: $ternary-color ;
     text-align: center;
-   
 }
 
 
@@ -383,8 +366,6 @@ color:$ternary-color ;
     background-color:$secondary-color ;
     color:$ternary-color ;
     border-radius: 3px;
-
-    
 }
 
 .buyBtn{
@@ -400,7 +381,6 @@ color:$ternary-color ;
 }
 
 .clearBtn:hover{
-   
     color: $cuaternary-color;
 }
 
@@ -415,7 +395,6 @@ color:$ternary-color ;
     font-size: 1.5rem;
     color: $cuaternary-color;
     text-align: left;
-    
 }
 
 
@@ -425,12 +404,10 @@ color:$ternary-color ;
     background-color: $cuaternary-color;
     width: 100%;
     margin-top: auto;
-
 }
 
 .footer1{
     display: flex;
-
 }
 
 .footerBrandLink{
@@ -438,7 +415,6 @@ color:$ternary-color ;
     text-decoration: none;
     color:$primary-color;
     margin: 2rem 0rem 1rem 2rem;
-    
 }
 
 .footerBrandLink:hover{
@@ -449,7 +425,6 @@ color:$ternary-color ;
     color:$primary-color;
     margin: 1.5rem 0rem 0rem 45rem;
     display: flex
-
 }
 
 
@@ -501,8 +476,7 @@ color:$ternary-color ;
 
 .inputContainer{
     position: relative;
-    margin:2rem 0rem;
-    
+    margin:2rem 0rem;  
 }
 
 .formLabel{
@@ -595,3 +569,25 @@ input:focus~.bar::before{
     font-size: 1.5rem;
 }
 
+@media only screen and (max-width: 40em) { 
+    .itemDetail{
+        border: solid $cuaternary-color 0.5rem;  
+        height: 40rem; 
+        margin: 12rem 0rem 2rem 0rem;
+       
+    }
+
+    .userForm,.checkCartContainer{
+        
+        padding: 0rem 3rem;
+        width: 60vw;
+        height: 100vh;
+    }
+
+    .submitForm{
+        margin-left: 2rem;
+        
+    }
+
+
+}

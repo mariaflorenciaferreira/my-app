@@ -1,5 +1,5 @@
 import {Container,Nav,Navbar} from "react-bootstrap"
-import {Link} from "react-router-dom"
+import {Link,NavLink} from "react-router-dom"
 import LogoIcon from "./LogoIcon"
 import CartWidget from "../widget/CartWidget"
 
@@ -13,10 +13,10 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
             <Link to="/" className="navLinks"  >INICIO</Link>
-            <Link to="/categoria/interior" className="navLinks" >INTERIOR</Link>
-            <Link to="/categoria/exterior" className="navLinks" >EXTERIOR</Link>
-            <Link to="/categoria/herramientas" className="navLinks" >HERRAMIENTAS</Link>
-            <Link to="/categoria/sustratos" className="navLinks" >SUSTRATOS</Link>
+            <NavLink  to="/categoria/interior" className="navLinks" active-classname="active"  >INTERIOR</NavLink>
+            <NavLink  to="/categoria/exterior" className="navLinks" active-classname="active" >EXTERIOR</NavLink>
+            <NavLink  to="/categoria/herramientas" className="navLinks" active-classname="active" >HERRAMIENTAS</NavLink>
+            <NavLink  to="/categoria/sustratos" className="navLinks" active-classname="active" >SUSTRATOS</NavLink>
             <Link to="/Checkout" ><CartWidget/></Link>
             
             
