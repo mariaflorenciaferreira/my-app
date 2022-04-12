@@ -374,6 +374,7 @@ color:$ternary-color ;
     text-decoration: none;
     background-color:$ternary-color ;
     color: $secondary-color;
+    text-align: center;
 }
 
 .buyBtn:hover{
@@ -581,7 +582,7 @@ input:focus~.bar::before{
         
         padding: 0rem 3rem;
         width: 60vw;
-        height: 100vh;
+        height: 200vh;
     }
 
     .submitForm{
